@@ -15,12 +15,19 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
+
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        if (Auth::guard($guard)->check() && Auth::user()->role_id == 1) {
+            return redirect()->route('admin.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 2) {
+            return redirect()->route('pengguna.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 3) {
+            return redirect()->route('mitra.dashboard');
+        } elseif (Auth::guard($guard)->check() && Auth::user()->role_id == 4) {
+            return redirect()->route('bank_sampah.dashboard');
+        } else {
+            return $next($request);
         }
-
-        return $next($request);
     }
 }
