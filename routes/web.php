@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/layout/layout','HomeController@index');
+
+Route::get('dbmitra', 'DBMitraController@displaydb');
+
