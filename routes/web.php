@@ -45,3 +45,9 @@ Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'mi
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
+
+
+Route::get('/layout/layout','HomeController@index');
+
+Route::get('dbmitra', 'DBMitraController@displaydb');
+
