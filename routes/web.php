@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('dbmitra', 'DBMitraController@displaydb');
+Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');

@@ -9,5 +9,5 @@ class DBMitraController extends Controller
     public function displaydb(){
         return view('dbmitra');
     }
-    //
+
 }
