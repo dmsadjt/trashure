@@ -14,9 +14,10 @@ class BanksampahMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function handle($request, Closure $next)
     {
-        if(auth::check() && Auth::user()->role_id == 4){
+        if(auth::check() && Auth::user() -> role_id == 4){
             return $next($request);
          }
          else {
