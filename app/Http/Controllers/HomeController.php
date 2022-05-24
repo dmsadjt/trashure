@@ -26,9 +26,9 @@ class HomeController extends Controller
     {
         return view('home');
 
-    public function index()
-    {
-        return view('layout.layout');
+    //public function index2()
+    //{
+        //return view('layout.layout');
 
     }
 }
