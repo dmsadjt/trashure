@@ -39,6 +39,10 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        href {
+            color : white;
+        }
+
 
     </style>
 
