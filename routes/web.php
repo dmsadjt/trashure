@@ -51,3 +51,4 @@ Route::get('/layout/layout','HomeController@index');
 
 Route::get('dbmitra', 'DBMitraController@displaydb');
 
+Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
