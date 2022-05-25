@@ -69,7 +69,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row col-md-4">
+                            <div class="form-group row">
                             <input type="checkbox" id="role_id" name="role_id" value="1">
                             <label class="col-md-4 for="vehicle1"> Admin </label>
                             <input type="checkbox" id="role_id" name="role_id" value="2">
