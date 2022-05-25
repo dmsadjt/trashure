@@ -58,7 +58,8 @@ nav {
         </li>
   </div>
 </nav>
-
+@section('content')
+@show
 
 
 </body>

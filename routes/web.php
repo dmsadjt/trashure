@@ -21,11 +21,15 @@ Route::get('/', function () {
     } elseif (Auth::check() && Auth::user()->role_id == 4) {
         return redirect('banksampah/dashboard');
     } else {
-        return redirect('login');
+        return redirect('welcome');
     }
 });
 
 Auth::routes();
+
+Route::get('/overviewdata', function() {
+    return view('admin.overviewDPengguna');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -51,3 +55,6 @@ Route::get('/layout/layout','HomeController@index');
 
 Route::get('dbmitra', 'DBMitraController@displaydb');
 
+Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
+
+Route::get('welcome', 'WelcomeController@welcome');
