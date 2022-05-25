@@ -41,6 +41,7 @@
 
         href {
             color : white;
+            font-family: 'Montserrat', sans-serif;
         }
 
 
