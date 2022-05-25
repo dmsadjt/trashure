@@ -21,7 +21,7 @@ Route::get('/', function () {
     } elseif (Auth::check() && Auth::user()->role_id == 4) {
         return redirect('banksampah/dashboard');
     } else {
-        return redirect('welcome');
+        return redirect('login');
     }
 });
 
