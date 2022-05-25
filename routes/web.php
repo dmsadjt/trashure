@@ -27,6 +27,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/overviewdata', function() {
+    return view('admin.overviewDPengguna');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
