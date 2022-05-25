@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -49,5 +48,8 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
 
 Route::get('/layout/layout','HomeController@index');
 
-Route::get('dbmitra', 'DBMitraController@displaydb');
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesanan1', 'BankSampah\BankSampahController@daftarpesanan1');
+
 

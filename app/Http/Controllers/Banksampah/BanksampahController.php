@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class BanksampahController extends Controller
 {
+    public function daftarpesanan1() {
+        return view("banksampah.daftarpesanan1");
+    }
     //
 }
