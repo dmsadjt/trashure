@@ -31,6 +31,11 @@ Route::get('/overviewdata', function() {
     return view('admin.overviewDPengguna');
 });
 
+//route view dimas
+Route::get('/profilbank', function(){
+    return view('banksampah.profil');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 

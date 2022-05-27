@@ -18,46 +18,47 @@
 
     <style>
         .content--notification {
-            margin: 1em;
+            margin: 2em;
             padding : 1em;
-            background-color: #16C827;
+            background-color: #A4FFC8;
             border-radius : 10px;
+        }
+
+        .content--menus{
+            margin: 2em;
         }
 
         .content--notification .content--notification_image {
-            display: flex;
-            justify-content: end;
+
         }
 
-        .content--menu_profile {
-            margin: 1em;
+        .content--menu_left {
             padding : 1em;
-            background-color: #16C827;
+            background-color: #A4FFC8;
             border-radius : 10px;
         }
 
-        .content--menu_profile .row {
+        .content--menu_left .row {
             display :flex;
             justify-content: center;
         }
-        .content--menu_profile p {
+        .content--menu_left p {
             display :flex;
             justify-content: center;
         }
 
-        .content--menu_order {
-            margin: 1em;
+        .content--menu_right {
             padding: 1em;
-            background-color: #16C827;
+            background-color: #A4FFC8;
             border-radius:10px;
         }
 
-        .content--menu_order .row{
+        .content--menu_right .row{
             display :flex;
             justify-content: center;
         }
 
-        .content--menu_order p{
+        .content--menu_right p{
             display :flex;
             justify-content: center;
         }
@@ -74,6 +75,11 @@
             height: 100px;
             width: 100px;
             background-color: black;
+        }
+
+        .image--banksampah{
+            height: 100px;
+            width: 100px;
         }
 
     </style>
