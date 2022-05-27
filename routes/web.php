@@ -36,6 +36,10 @@ Route::get('/profilbank', function(){
     return view('banksampah.profil');
 });
 
+Route::get('/driver-found', function(){
+    return view('pengguna.driver_found');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {

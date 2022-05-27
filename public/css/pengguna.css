@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+nav {
+  background-color: #16C827;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* driver-found */
+.driver{
+    --main-color : #16C827;
+    --accent : #78FF86;
+    background-color: var(--main-color);
+    margin: 1em 1em 1em 1em;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.driver .row .alamat{
+    background-color: var(--accent);
+    margin: 1em 1em 1em 1em;
+    padding: 1em 1em 1em 1em;
+}
+.image{
+    width: 200;
+    height: 200;
+    border-radius: 90px;
+}
