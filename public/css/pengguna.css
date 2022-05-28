@@ -8,6 +8,7 @@ nav {
 }
 
 
+
 /* driver-found */
 .driver{
     --main-color : #16C827;
@@ -29,4 +30,21 @@ nav {
     width: 200;
     height: 200;
     border-radius: 90px;
+}
+
+.peta-placeholder{
+    display: flex;
+    justify-content: center;
+}
+
+.peta-placeholder img{
+    width: 40vw;
+    height: 40vh;
+}
+
+.alamat{
+    margin:auto;
+    width: 60vw;
+    border-radius: 10px;
+    border : solid green;
 }

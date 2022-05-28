@@ -40,6 +40,15 @@ Route::get('/driver-found', function(){
     return view('pengguna.driver_found');
 });
 
+Route::get('/overview-informasi', function(){
+    return view('admin.overviewDInformasi');
+});
+
+Route::get('/pilih-alamat', function(){
+    return view('pengguna.pilih_alamat');
+});
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
