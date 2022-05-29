@@ -1,13 +1,29 @@
+@extends('layouts.navbar-admin')
+@section('content')
+    <div class="row text-center m-4">
+        <h1>Welcome back, {{$admin->name}}!</h1>
+    </div>
+    <div class="container main">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-</head>
-<body>
-    <h1>Welcome to Admin Dashboard</h1>
-</body>
-</html>
+        <div class="row text-center">
+            <div class="col">
+                <div class="row">
+                    <a class="btn main-btn">Anggota</a>
+                </div>
+                <div class="row">
+                    <a class="btn main-btn">Mitra</a>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <a class="btn main-btn">Bank Sampah</a>
+                </div>
+                <div class="row">
+                    <a class="btn main-btn" href="/admin/overview-informasi">Informasi Sampah</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+@endsection

@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -21,7 +20,7 @@ Route::get('/', function () {
     } elseif (Auth::check() && Auth::user()->role_id == 4) {
         return redirect('banksampah/dashboard');
     } else {
-        return redirect('login');
+        return redirect('welcome');
     }
 });
 
@@ -31,15 +30,26 @@ Route::get('/overviewdata', function() {
     return view('admin.overviewDPengguna');
 });
 
-Route::get('/overviewcoba', function() {
-    return view('admin.cobaa');
+//route view dimas
+Route::get('/profilbank', function(){
+    return view('banksampah.profil');
 });
+
+Route::get('/driver-found', function(){
+    return view('pengguna.driver_found');
+});
+
+Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah');
+
+Route::get('/pilih-alamat', function(){
+    return view('pengguna.pilih_alamat');
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'AdminController@index')->name('dashboard');
 });
 
 Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
@@ -57,6 +67,13 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
 
 Route::get('/layout/layout','HomeController@index');
 
-Route::get('dbmitra', 'DBMitraController@displaydb');
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');\
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
+
+Route::get('welcome', 'WelcomeController@welcome');

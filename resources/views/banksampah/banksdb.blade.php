@@ -5,7 +5,7 @@
         <div class="col content--notification_image">
             <div class="image--placeholder"></div>
         </div>
-        <div class="col-9 content--notification_message">
+        <div class="col content--notification_message">
             <h1>Waste Bank Vrindavan</h1>
             <p>Check your Notification if any order is coming to your waste bank!</p>
         </div>
