@@ -1,6 +1,6 @@
 @extends('layouts.layout')
-@section('text1', 'Profil Bank')
-@section('text2', 'Daftar Pesanan')
+@section('text1', 'Pesan')
+@section('text2', 'Informasi')
 
 @section('content')
 <style>
@@ -79,10 +79,10 @@ table {
                                     src="{{ URL::asset('/image/paper.png') }}"  height="120" width="100"
                                     class="float-start">
                                 <div class="text">
-                                    <h3><b>Accept Trash</b> </h3>
-                                    <h5>Driver Name : RubenGod <span class ="a"> Trash Delivered <span></h5>
-                                    <h5>Plate Number: L 444 SYU <span class ="b"> 26 February 2002 02.00 PM <span></h5>
-                                    <h5>Vehicle Used: ZX150 R </h5>
+                                    <h3><b>Angkut Sampah</b> </h3>
+                                    <h5><span class ="a"> Trash Delivered <span></h5>
+                                    <h5><br>Tujuan : Bank Sampah Induk Surabaya<span class = "c"> 17 July 2000, 09.00 PM<span></h5>
+
 
                                 </div>
                             </div>
@@ -94,10 +94,10 @@ table {
                                     src="{{ URL::asset('/image/paper.png') }}"  height="120" width="100"
                                     class="float-start">
                                 <div class="text">
-                                    <h3><b>Accept Trash</b> </h3>
-                                    <h5>Driver Name : TamGod <span class ="a"> Trash Delivered <span></h5>
-                                    <h5>Plate Number: T 444 M <span class ="c"> 17 July 2021 05.00 PM <span></h5>
-                                    <h5>Vehicle Used: Kawasaki Honda </h5>
+                                    <h3><b>Angkut Sampah</b> </h3>
+                                    <h5><span class ="a"> Trash Delivered <span></h5>
+                                    <h5><br>Tujuan : Bank Sampah Bintang Mangrove<span class = "c"> 15 June 2021, 10.40PM<span></h5>
+
 
                                 </div>
                             </div>

@@ -10,5 +10,8 @@ class PengaturanController extends Controller
     public function pengaturan(){
         return view('pengguna.pengaturan');
     }
+    public function editprofile() {
+        return view("pengguna.editprofile");
+    }
     //
 }
