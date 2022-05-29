@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable 
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -40,6 +40,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsTo('App\Role');
+    }
+
+    public function pesanans(){
+        return $this->belongsToMany('App\Pesanan');
     }
 
 }

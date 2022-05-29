@@ -24,26 +24,22 @@
                 <th scope="col">Informasi</th>
                 <th scope="col">Gambar</th>
                 <th scope="col">Tanggal Pembuatan</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody id="myTable">
+            @foreach ($informasi as $i)
             <tr>
-                <th scope="row">1</th>
-                <td>Placeholder</td>
-                <td>Placeholder</td>
-                <td>Placeholder</td>
-                <td>placeholder</td>
-
+                <th>#</th>
+                <td>{{$i->judul}}</td>
+                <td>{{$i->informasi}}</td>
+                <td><a href="{{$i->gambar}}">{{$i->gambar}}</a></td>
+                <td>{{$i->tanggal_pembuatan}}</td>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Hapus</a></td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>isian</td>
-                <td>isian</td>
-                <td>isian</td>
-                <td>isian</td>
-
-            </tr>
-        </tbody>
+            @endforeach
     </table>
 
     <script>
