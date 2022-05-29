@@ -69,7 +69,9 @@ Route::get('/layout/layout','HomeController@index');
 
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesanan1', 'BankSampah\BankSampahController@daftarpesanan1');
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');\
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
