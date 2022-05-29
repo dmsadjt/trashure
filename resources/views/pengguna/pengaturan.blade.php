@@ -44,7 +44,7 @@
                             <div class="text">
                                 <h2><b>Rafz Ngganteng</b></h2>
                                 <h4>08129123912</h4>
-                                <p>RafzNgganteng@gemel.com
+                                <p>RafzNgganteng@gemesl.com
                                 <p>
                                     <br>
                                     <u>Edit Profile</u>
