@@ -20,14 +20,17 @@ Route::get('/', function () {
     } elseif (Auth::check() && Auth::user()->role_id == 4) {
         return redirect('banksampah/dashboard');
     } else {
-        return redirect('login');
+        return redirect('welcome');
     }
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/overviewdata', function() {
+    return view('admin.overviewDPengguna');
+});
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -53,3 +56,6 @@ Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesanan1', 'BankSampah\BankSampahController@daftarpesanan1');
 
 
+Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
+
+Route::get('welcome', 'WelcomeController@welcome');

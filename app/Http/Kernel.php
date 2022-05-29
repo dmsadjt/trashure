@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\PenggunaMiddleware;
 use App\Http\Middleware\MitraMiddleware;
-use App\Http\Middleware\BanksampahrMiddleware;
+use App\Http\Middleware\BanksampahMiddleware;
 
 class Kernel extends HttpKernel
 {
@@ -67,7 +67,7 @@ class Kernel extends HttpKernel
         'admin' => AdminMiddleware::class,
         'pengguna' => PenggunaMiddleware::class,
         'mitra' => MitraMiddleware::class,
-        'Banksampah' => BanksampahMiddleware::class,
+        'banksampah' => BanksampahMiddleware::class,
     ];
 
     /**

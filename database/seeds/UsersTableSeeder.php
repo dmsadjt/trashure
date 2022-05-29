@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'role_id' => '1',
-            'nama' => 'Admin',
+            'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('12345678'),
             'alamat' => 'surabaya',
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'role_id' => '2',
-            'nama' => 'Pengguna',
+            'name' => 'Pengguna',
             'email' => 'pengguna@gmail.com',
             'password' => Hash::make('pass@pengguna'),
             'alamat' => 'Jakarta',
@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'role_id' => '3',
-            'nama' => 'Mitra',
+            'name' => 'Mitra',
             'email' => 'mitra@gmail.com',
             'password' => Hash::make('pass@mitra'),
             'alamat' => 'surabaya',
@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'role_id' => '4',
-            'nama' => 'Bank Sampah',
+            'name' => 'Bank Sampah',
             'email' => 'banks@gmail.com',
             'password' => Hash::make('pass@banks'),
             'alamat' => 'surabaya',
