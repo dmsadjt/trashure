@@ -1,0 +1,26 @@
+/* dashboard */
+
+.main{
+    --main-color : #16C827;
+    --accent : #78FF86;
+    --primary : #c7f9cc;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+.main-btn{
+    margin: 1em;
+    height:100px;
+    width: 100px;
+    background-color: var(--primary);
+    border-color: var(--main-color);
+    text-align: center;
+}
+
+.btn{
+    text-align: center;
+}
+
+
