@@ -69,7 +69,6 @@
 </head>
 
 <body>
-
         <div class="content">
             <div class="title m-b-md">
                 <img src="{{ url('/image/Frame 1194.png') }}" ; class="d-block w-100" alt="logotrashure">
@@ -84,7 +83,7 @@
 
                                 <div class="form-group row mb-6">
                                     <div class="col-md-8">
-                                        <input id="email" type="email" placeholder="E-Mail Address"
+                                        <input id="email" type="email" placeholder="E-Mail Address" style="width: 500px; margin-bottom: 20px"
                                             class="form-control @error('email') is-invalid @enderror" name="email"
                                             value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -98,7 +97,7 @@
 
                                 <div class="form-group row mb-6">
                                     <div class="col-md-8">
-                                        <input id="password" type="password" placeholder="Password"
+                                        <input id="password" type="password" placeholder="Password" style="width: 500px;"
                                             class="form-control @error('password') is-invalid @enderror" name="password"
                                             required autocomplete="current-password">
 
