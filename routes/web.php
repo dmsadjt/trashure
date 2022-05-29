@@ -31,6 +31,10 @@ Route::get('/overviewdata', function() {
     return view('admin.overviewDPengguna');
 });
 
+Route::get('/overviewcoba', function() {
+    return view('admin.cobaa');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 

@@ -10,5 +10,10 @@ class DBPenggunaController extends Controller
         return view('overviewDPengguna');
     }
 
+    public function cobaa(){
+        return view('coba');
+    }
+
 
 }
+
