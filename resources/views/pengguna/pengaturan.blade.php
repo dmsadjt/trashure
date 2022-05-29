@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 

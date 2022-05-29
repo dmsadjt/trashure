@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 @section('text1', 'Profil Bank')
 @section('text2', 'Daftar Pesanan')
 
