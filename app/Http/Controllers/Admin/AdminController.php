@@ -23,4 +23,21 @@ class AdminController extends Controller
 
         return view('admin.overviewDInformasi', ['informasi' => $informasi]);
     }
+
+    public function create()
+    {
+        return view('informasi.nambahinformasi');
+    }
+
+    public function store()
+    {
+        Mahasiswa::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'dob' => request('dob'),
+            'address' => request('addres')
+        ]);
+
+        return redirect()->back();
+    }
 }
