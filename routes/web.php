@@ -14,6 +14,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DBPenggunaController;
 
+///Auth
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -27,30 +28,6 @@ Route::get('/', function () {
         return redirect('welcome');
     }
 });
-
-Auth::routes();
-//route view dataPenggunaRuben
-Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
-//route tambah data pengguna
-Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
-Route::post('/store','DBPenggunaController@store');
-
-
-//route view dimas
-Route::get('/profilbank', function(){
-    return view('banksampah.profil');
-});
-
-Route::get('/driver-found', function(){
-    return view('pengguna.driver_found');
-});
-
-Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah');
-
-Route::get('/pilih-alamat', function(){
-    return view('pengguna.pilih_alamat');
-});
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -70,13 +47,40 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
+Auth::routes();
+//route view dataPenggunaRuben
+Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
+//route tambah data pengguna
+Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+Route::post('/store','DBPenggunaController@store');
+//Auth
+
+
+
+
+//route view dimas
+Route::get('/profilbank', function(){
+    return view('banksampah.profil');
+});
+
+Route::get('/driver-found', function(){
+    return view('pengguna.driver_found');
+});
+
+Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah');
+
+Route::get('/pilih-alamat', function(){
+    return view('pengguna.pilih_alamat');
+});
+
+
 
 Route::get('/layout/layout','HomeController@index');
 
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');\
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 
