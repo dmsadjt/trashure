@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+///Auth
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -24,7 +26,28 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('dashboard', 'AdminController@index')->name('dashboard');
+});
+
+Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
 Auth::routes();
+//Auth
+
+
 
 Route::get('/overviewdata', function() {
     return view('admin.overviewDPengguna');
@@ -46,31 +69,13 @@ Route::get('/pilih-alamat', function(){
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('dashboard', 'AdminController@index')->name('dashboard');
-});
-
-Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-});
-
-Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-});
-
-Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-});
-
 
 Route::get('/layout/layout','HomeController@index');
 
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');\
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 
