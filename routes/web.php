@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\DBPenggunaController;
+
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -25,10 +29,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+//route view dataPenggunaRuben
+Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
+//route tambah data pengguna
+Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+Route::post('/store','DBPenggunaController@store');
 
-Route::get('/overviewdata', function() {
-    return view('admin.overviewDPengguna');
-});
 
 //route view dimas
 Route::get('/profilbank', function(){
