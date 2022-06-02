@@ -36,11 +36,10 @@ class DBPenggunaController extends Controller
     }
 
     public function edit($id)
-{
-	// mengambil data berdasarkan id yang dipilih
-	$users = DB::table('users')->where('id',$id)->get();
-	// passing data pendapatan yang didapat ke view edit.blade.php
-	return view('admin.editoverviewDPengguna',['users' => $users]);
-
-}
+    {
+        // mengambil data berdasarkan id yang dipilih
+        $users = DB::table('users')->where('id', $id)->get();
+        // passing data pendapatan yang didapat ke view edit.blade.php
+        return view('admin.editoverviewDPengguna', ['users' => $users]);
+    }
 }

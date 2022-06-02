@@ -57,6 +57,12 @@ Route::post('/store','DBPenggunaController@store');
 //route edit data pengguna
 Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
 
+// //route view dataPenggunaRaffi
+// Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
+//route store data pengguna ke DB
+Route::post('/store','DBInformasiController@store');
+//route tambah data informasi
+Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 
 
 
@@ -85,7 +91,7 @@ Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananba
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
-Route::get('nambahinformasi', 'Pengguna\InformasiController@nambahinformasi');
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');

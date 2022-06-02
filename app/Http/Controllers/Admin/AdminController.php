@@ -37,15 +37,11 @@ class AdminController extends Controller
         return view('informasi.nambahinformasi');
     }
 
-    public function store()
-    {
-        Mahasiswa::create([
-            'name' => request('name'),
-            'email' => request('email'),
-            'dob' => request('dob'),
-            'address' => request('addres')
-        ]);
+    public function dataInformasiSampah(){
+        $informasi = DB::Table('informasi_sampahs')
+                        ->orderBy('info_id')
+                        ->paginate(5);
 
-        return redirect()->back();
+        return view('informasi.nambahinformasi', ['informasi' => $informasi]);
     }
 }

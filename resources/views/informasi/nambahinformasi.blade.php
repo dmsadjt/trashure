@@ -6,40 +6,38 @@
 
 
 
-<div class="container">
-    <div class="row justify-content-center" style="margin-top: 3em" >
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Tambah Informasi</div>
-
-                <div class="card-body">
-                    <form method="POST" action="/mahasiswa">
-                        @csrf
-
-                        <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Tanggal Lahir</label>
-                            <input type="date" class="form-control" name="dob" value="{{ old('dob') }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea name="address" class="form-control" cols="30" rows="10">{{ old('addres') }}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary">Simpan</button>
-                        </div>
-
-                    </form>
+    <div class="container">
+        <div class="container-fluid align-self-center col-md-8" style=" margin-top : 2em">
+            <nav class="navbar navbar-light bg-light" id="navtambah">
+                <div class="container-fluid">
+                    <span class="navbar-brand">Add customer</span>
                 </div>
-            </div>
+            </nav>
+
+
+            <form action="/store" method="post">
+                {{ csrf_field() }}
+                <div>
+
+                    <div class="form-group">
+                        Judul Informasi <input class="form-control" type="text" name="name" required="required"> <br />
+                        Informasi
+                        <textarea class="form-control" type="text" name="informasi" required="required"> </textarea> <br />
+                        Gambar <input class="form-control" type="text" name="gambar" required="required"> <br />
+                    </div>
+                </div>
+
+
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid justify-content-end">
+                        <a href="/overview-informasi">
+                            <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
+                        </a>
+                        <input type="submit" value="Submit" class="btn btn-success">
+                    </div>
+                </nav>
+            </form>
         </div>
     </div>
-</div>
+
 @endsection
