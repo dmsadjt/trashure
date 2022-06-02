@@ -61,11 +61,12 @@
                 <tr>
                     <th>CHECK</th>
                     <th>NAME</th>
+                    <th>ROLE ID</th>
                     <th>ADDRESS</th>
                     <th>EMAIL</th>
                     <th>PASSWORD</th>
                     <th>PHONE NUMBER</th>
-                    <th>BALANCE</th>
+                    <th>NOMOR REKENING</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -74,13 +75,15 @@
                     <tr>
                         <td><input type="checkbox"></td>
                         <td>{{ $p->name }}</td>
+                        <td>{{ $p->role_id }}</td>
                         <td>{{ $p->alamat }}</td>
                         <td>{{ $p->email }}</td>
                         <td>{{ $p->password }}</td>
                         <td>{{ $p->no_telepon }}</td>
+                        <td>{{ $p->no_rekening }}</td>
 
                         <td>
-                            <a href="">
+                            <a href="/editdatapengguna/ {{ $p->id }}">
                                 <input type="button" id="editButton" value="edit">
                             </a>
                             <a href="">

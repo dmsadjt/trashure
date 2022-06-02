@@ -34,11 +34,12 @@
             </nav>
 
 
-            <form action="/store" method="post">
+            <form action="/edit" method="post">
                 {{ csrf_field() }}
                 <div>
-
+                    @foreach ($users as $p)
                     <div class="form-group">
+
                         ROLE ID <select class="form-control" type="text" name="role_id" required = "required">
                             <option value="" selected="" disabled="">--SELECT--</option>
                             <option value="1">1</option>
@@ -46,14 +47,15 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select> <br />
-                        Customer name <input class="form-control" type="text" name="name" required="required"> <br />
+                        Customer name <input class="form-control" type="text" name="name" value="{{ $p->name }}" required="required"> <br />
                         Address
-                        <textarea class="form-control" type="text" name="alamat" required="required"> </textarea> <br />
-                        Email <input class="form-control" type="text" name="email" required="required"> <br />
-                        Password <input class="form-control" name="password" required="required"> <br />
-                        Phone number <input class="form-control" name="no_telepon" required="required"> <br />
-                        Nomor rekening <input class="form-control" name="no_rekening" required="required"> <br />
+                        <textarea class="form-control" type="text" name="alamat"  required="required">{{ $p->alamat }}</textarea> <br />
+                        Email <input class="form-control" type="text" name="email" value="{{ $p->email }}" required="required"> <br />
+                        {{-- Password <input class="form-control" name="password" value="{{ $p->password }}" required="required"> <br /> --}}
+                        Phone number <input class="form-control" name="no_telepon" value="{{ $p->no_telepon }}" required="required"> <br />
+                        Nomor rekening <input class="form-control" name="no_rekening" value="{{ $p->no_rekening }}" required="required"> <br />
                     </div>
+                    @endforeach
                 </div>
 
 

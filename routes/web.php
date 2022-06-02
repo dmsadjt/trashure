@@ -52,8 +52,10 @@ Auth::routes();
 Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
 //route tambah data pengguna
 Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+//route store data pengguna ke DB
 Route::post('/store','DBPenggunaController@store');
-//Auth
+//route edit data pengguna
+Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
 
 
 
