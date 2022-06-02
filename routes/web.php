@@ -83,6 +83,8 @@ Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananba
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
+Route::get('nambahinformasi', 'Pengguna\InformasiController@nambahinformasi');
+
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 

@@ -1,14 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.layout')
+@section('text1', 'Pesan')
+@section('text2', 'Informasi')
 
 @section('content')
 
 
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top: 3em" >
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Tambah Mahasiswa</div>
+                <div class="card-header">Tambah Informasi</div>
 
                 <div class="card-body">
                     <form method="POST" action="/mahasiswa">

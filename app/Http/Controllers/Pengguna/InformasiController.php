@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Controllers\Pengguna;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class InformasiController extends Controller
+{
+    public function nambahinformasi() {
+        return view("informasi.nambahinformasi");
+    }
+
+}
