@@ -92,7 +92,9 @@ Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpe
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
-
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
+Route::get('poin', 'Pengguna\PoinController@poin');
+Route::get('invoice', 'Pesanan\InvoiceController@invoice');
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
