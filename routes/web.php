@@ -75,11 +75,23 @@ Route::get('/pilih-alamat', function(){
 });
 
 
+
+Route::get('/layout/layout','HomeController@index');
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+
+//route view Ega
+
 //Pengguna
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
+Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
+//Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
 Route::get('poin', 'Pengguna\PoinController@poin');
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
