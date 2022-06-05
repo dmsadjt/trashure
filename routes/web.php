@@ -53,7 +53,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 });
 
 Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'PenggunaController@index')->name('dashboardPengguna');
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
@@ -70,10 +70,15 @@ Route::get('/layout/layout','HomeController@index');
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');\
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 Route::get('welcome', 'WelcomeController@welcome');
+
+Route::get('/informasi', 'Pengguna\DashboardController@informasi');
+Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
+
+Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');

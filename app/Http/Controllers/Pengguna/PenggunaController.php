@@ -11,6 +11,9 @@ class PenggunaController extends Controller
         return view("pengguna.daftarpesananpengguna");
     }
 
+    public function index(){
+        return view('pengguna.penggunadb');
+    }
 
     //
 }
