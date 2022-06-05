@@ -38,7 +38,7 @@
                 <td>{{$i->tanggal_pembuatan}}</td>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Hapus</a></td>
-            </tr>
+            </tr>ed
             @endforeach
     </table>
 

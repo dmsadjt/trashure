@@ -23,4 +23,25 @@ class AdminController extends Controller
 
         return view('admin.overviewDInformasi', ['informasi' => $informasi]);
     }
+
+    public function dataPengguna(){
+        $pengguna = DB::Table('users')
+                        ->orderBy('id')
+                        ->paginate(5);
+
+        return view('admin.overviewDPengguna', ['pengguna' => $pengguna]);
+    }
+
+    public function create()
+    {
+        return view('informasi.nambahinformasi');
+    }
+
+    public function dataInformasiSampah(){
+        $informasi = DB::Table('informasi_sampahs')
+                        ->orderBy('info_id')
+                        ->paginate(5);
+
+        return view('informasi.nambahinformasi', ['informasi' => $informasi]);
+    }
 }

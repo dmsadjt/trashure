@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\DBPenggunaController;
+
+///Auth
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role_id == 1) {
         return redirect('admin/dashboard');
@@ -24,33 +29,11 @@ Route::get('/', function () {
     }
 });
 
-Auth::routes();
-
-Route::get('/overviewdata', function() {
-    return view('admin.overviewDPengguna');
-});
-
-//route view dimas
-Route::get('/profilbank', function(){
-    return view('banksampah.profil');
-});
-
-Route::get('/driver-found', function(){
-    return view('pengguna.driver_found');
-});
-
-Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah');
-
-Route::get('/pilih-alamat', function(){
-    return view('pengguna.pilih_alamat');
-});
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', 'AdminController@index')->name('dashboard');
-});
+});//Muhammad Dimas Adijanto - 5026201138
 
 Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
     Route::get('dashboard', 'PenggunaController@index')->name('dashboardPengguna');
@@ -64,6 +47,34 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
+Auth::routes();
+//route view dataPenggunaRuben
+Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
+//route tambah data pengguna
+Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+//route store data pengguna ke DB
+Route::post('/store','DBPenggunaController@store');
+//route edit data pengguna
+Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
+
+// //route view dataPenggunaRaffi
+// Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
+//route store data pengguna ke DB
+Route::post('/store','DBInformasiController@store');
+//route tambah data informasi
+Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
+
+
+
+//route view dimas
+Route::get('/pengguna/pesanan/driver-found', function(){
+    return view('pengguna.driver_found');
+});
+Route::get('/pilih-alamat', function(){
+    return view('pengguna.pilih_alamat');
+});
+
+
 
 Route::get('/layout/layout','HomeController@index');
 
@@ -73,6 +84,21 @@ Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananba
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
+
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('poin', 'Pengguna\PoinController@poin');
+
+
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
+
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
+Route::get('invoice', 'Pesanan\InvoiceController@invoice');
+
+Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
