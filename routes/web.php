@@ -87,7 +87,7 @@ Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpe
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
-Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampah');
+Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
 //Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
 Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');

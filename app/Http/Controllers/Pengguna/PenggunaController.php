@@ -13,7 +13,7 @@ class PenggunaController extends Controller
     public function pesanpengguna() {
         return view("pesanan.halamanpesanan");
     }
-    public function pilihsampah() {
+    public function pilihsampahh() {
         return view("pesanan.pilihsampah");
     }
 

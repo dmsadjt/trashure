@@ -42,8 +42,8 @@
             <br>
             <div class="d-inline-flex p-3 text-black">
                 <div class="row align-items-center">
-                <div class="col-sm-6"><img src="{{ url('/image/pengguna/anorganik.png') }}" class="rounded" alt="" width="115"></div>
-                <div class="col-sm-5"><img src="{{ url('/image/pengguna/organik.png') }}" class="rounded" alt="" width="115"></div>
+                <div class="col-sm-6"><img src="{{ url('/image/pengguna/anorganic.png') }}" class="rounded" alt="" width="115"></div>
+                <div class="col-sm-5"><img src="{{ url('/image/pengguna/organic.png') }}" class="rounded" alt="" width="115"></div>
                 <div class="row">
                     <div class="col-sm-6"><h4>Organic<h4></div>
                         <div class="col-sm-5"><h4 style="margin-left: 40px">Anorganic<h4></div>
