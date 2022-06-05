@@ -75,36 +75,50 @@ Route::get('/pilih-alamat', function(){
 });
 
 
-
-Route::get('/layout/layout','HomeController@index');
-
-Route::get('dbmitra', 'Mitra\DashboardController@index');
-Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
-Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
-
-
+//Pengguna
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
-Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('poin', 'Pengguna\PoinController@poin');
+Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
+
+
+//Mitra
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+
+
+//Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
 
+
+//Pesanan
 Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
 Route::get('invoice', 'Pesanan\InvoiceController@invoice');
 
+
+//Informasi Sampah
 Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
-Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
-
-Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
-
-Route::get('welcome', 'WelcomeController@welcome');
-
 Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
-
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+
+
+
+//Admin
+
+
+
+
+//other
+Route::get('/layout/layout','HomeController@index');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('welcome', 'WelcomeController@welcome');
+
+
+
