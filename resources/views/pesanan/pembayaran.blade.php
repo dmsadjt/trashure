@@ -5,7 +5,7 @@
 @section('content')
     <style>
         img {
-            margin-left: 100px;
+            margin-left: 20px;
             float: left;
         }
 
@@ -16,13 +16,12 @@
         }
 
 
-        h4{
+        h4 {
             margin-left: 100px
         }
 
         span {
             float: right;
-            font-size: 30px;
         }
 
         u {
@@ -62,8 +61,7 @@
                             <br>
                             <h4>Cash</h4>
                             <p>
-                                <br>
-                            <p><u>Edit Profile</u></p>
+                            <p><u>Ganti Pembayaran</u></p>
                         </div>
                     </div>
                 </div>
@@ -78,7 +76,7 @@
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
                             <h3>Jenis Sampah <span>Organik</span> </h3>
-                    
+
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
@@ -93,26 +91,12 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
-                            <h3>Saved Address <span>&#62;</span> </h3>
+                            <h3>Total Tagihan <span>60.000</span> </h3>
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
 
-            </div>
-
-            <br>
-
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <h3>Change Language <span>&#62;</span> </h3>
-                        </div>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
             </div>
     </body>
 

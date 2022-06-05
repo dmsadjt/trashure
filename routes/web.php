@@ -126,7 +126,7 @@ Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::get('/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 
 
 
