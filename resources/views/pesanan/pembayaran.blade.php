@@ -78,7 +78,7 @@
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
                             <h3>Jenis Sampah <span>Organik</span> </h3>
-                    sssddsss
+                    
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
