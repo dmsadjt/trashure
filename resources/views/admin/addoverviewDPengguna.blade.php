@@ -41,10 +41,10 @@
                     <div class="form-group">
                         ROLE ID <select class="form-control" type="text" name="role_id" required = "required">
                             <option value="" selected="" disabled="">--SELECT--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="1">1 - Administrator</option>
+                            <option value="2">2 - Pengguna</option>
+                            <option value="3">3 - Mitra</option>
+                            <option value="4">4 - Bank sampah</option>
                         </select> <br />
                         Customer name <input class="form-control" type="text" name="name" required="required"> <br />
                         Address

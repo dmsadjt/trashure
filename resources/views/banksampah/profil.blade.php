@@ -7,7 +7,7 @@
         </div>
         <div class="col-10">
             <h1>
-                WASTE BANK VRINDAVAN
+                {{$banks->profile->nama_bank}}
             </h1>
         </div>
     </div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="row">
-                <span class="status-bank">Active</span>
+                <span class="status-bank">{{$banks->profile->status_bank}}</span>
             </div>
         </div>
         <div class="col content--menu_right">

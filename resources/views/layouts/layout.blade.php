@@ -27,7 +27,7 @@
     <a class="navbar-brand fw-bold text-light" href="/home">TRASHURE</a>
       <ul class="navbar-nav justify-content-end align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-light" aria-current="page" href="#">@yield('text1')</a>
+          <a class="nav-link text-light" aria-current="page" href="pesananpengguna">@yield('text1')</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="#">@yield('text2')</a>

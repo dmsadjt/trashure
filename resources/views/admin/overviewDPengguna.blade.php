@@ -86,7 +86,7 @@
                             <a href="/editdatapengguna/ {{ $p->id }}">
                                 <input type="button" id="editButton" value="edit">
                             </a>
-                            <a href="">
+                            <a href="/hapusdatapengguna/ {{ $p->id }}">
                                 <input type="button" id="deleteButton" value="delete">
                             </a>
 
