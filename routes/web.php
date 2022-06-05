@@ -56,6 +56,8 @@ Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
 Route::post('/store','DBPenggunaController@store');
 //route edit data pengguna
 Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
+//route hapus data pengguna
+Route::get('/hapusdatapengguna/{id}','DBPenggunaController@hapus');
 
 // //route view dataPenggunaRaffi
 // Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
