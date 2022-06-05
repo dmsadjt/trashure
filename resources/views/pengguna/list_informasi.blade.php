@@ -51,6 +51,19 @@
         <img src="{{url('/informasi.png')}}" alt="" class="informasi mt-5">
         <br>
     </div>
+
+    @foreach ($informasi as $i)
+        <div class="row mt-5">
+            <a href="/informasi/list/{{$i->info_id}}">
+            <div class="card">
+                <div class="card-body">
+                    <p class="mt-3 ms-5">{{$i->judul}}</p>
+                </div>
+            </div>
+            </a>
+        </div>
+    @endforeach
+
     <div class="row mt-5">
         <a href="/informasi/list/organik">
           <div class="card">

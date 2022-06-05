@@ -88,7 +88,13 @@ Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 //Mitra
 Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('/mitra/pesanan/terima/id', function(){
+    return view('mitra.detail-pesanan');
+});
 
+Route::get('/mitra/pesanan/ambil/id', function(){
+    return view('mitra.ambil-pesanan');
+});
 
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
@@ -104,6 +110,7 @@ Route::get('invoice', 'Pesanan\InvoiceController@invoice');
 Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
+Route::get('/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
 Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 

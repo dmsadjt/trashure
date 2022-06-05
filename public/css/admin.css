@@ -1,6 +1,7 @@
 /* dashboard */
 
 .main{
+    --dark-green : #03690d;
     --main-color : #16C827;
     --accent : #78FF86;
     --primary : #c7f9cc;
