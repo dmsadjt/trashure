@@ -1,0 +1,22 @@
+html{
+    --main-color : #16C827;
+    --accent : #78FF86;
+    --primary : #c7f9cc;
+    --dark-green : #03690d;
+}
+
+.bg-green{
+    background-color: var(--main-color);
+}
+
+.bg-light-green{
+    background-color: var(--accent);
+}
+
+.bg-dark-green{
+    background-color: var(--dark-green);
+}
+
+table{
+    width: 100%;
+}
