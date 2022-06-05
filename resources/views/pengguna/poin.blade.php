@@ -20,7 +20,7 @@
         }
 
         span {
-            font-size: 30px;
+            float: right;
         }
 
         .card {
@@ -37,9 +37,9 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
-                            <img src="{{ URL::asset('/image/poins.png') }}" alt="poin Pic" height="125"
-                                width="125">
-                            <h3>Informasi Pengiriman </h3>
+                            <img src="{{ URL::asset('/image/poins.png') }}" alt="poin Pic" height="125" width="125">
+                            <h3>...</h3>
+
                         </div>
 
                     </div>
@@ -51,22 +51,26 @@
             <br>
 
             <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <img src="{{ URL::asset('/image/credit.png') }}" alt="biaya Pic" height="125"
-                                width="125">
-                            <h3>Rincian Biaya </h3>
-                            <div class="text">
-                                <h2><b>Rafz Ngganteng</b></h2>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="col-sm-4">
+                    <h3>History</h3>
                 </div>
+                <div class="col-sm-6"></div>
                 <div class="col-sm-2"></div>
             </div>
+
+            <div class="row">
+                <div class="card">
+                    <div class="card-body" style="display: inline-block">
+                        <h3>Juni 2022 </h3>
+                        <br>
+                        <p>Top Up Credit 50000  <span>+ 5 Point</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
     </body>
 
 @endsection

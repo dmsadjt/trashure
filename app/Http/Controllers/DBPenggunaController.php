@@ -36,27 +36,19 @@ class DBPenggunaController extends Controller
     }
 
     public function edit($id)
-<<<<<<< Updated upstream
     {
         // mengambil data berdasarkan id yang dipilih
         $users = DB::table('users')->where('id', $id)->get();
         // passing data pendapatan yang didapat ke view edit.blade.php
         return view('admin.editoverviewDPengguna', ['users' => $users]);
-=======
-{
-	// mengambil data berdasarkan id yang dipilih
-	$users = DB::table('users')->where('id',$id)->get();
-	// passing data pendapatan yang didapat ke view edit.blade.php
-	return view('admin.editoverviewDPengguna',['users' => $users]);
+    }
 
-}
-public function hapus($id)
+    public function hapus($id)
     {
         // menghapus data pengguna berdasarkan id yang dipilih
         DB::table('users')->where('id', $id)->delete();
 
         // alihkan halaman ke halaman pengguna
         return redirect('/overviewdata');
->>>>>>> Stashed changes
     }
 }

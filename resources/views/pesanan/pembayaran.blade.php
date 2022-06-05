@@ -59,6 +59,8 @@
                         <div class="card-body" style="display: inline-block">
                             <h3>Pembayaran </h3>
                             <br>
+                            <img src="{{ URL::asset('/image/credit.png') }}" alt="biaya Pic" height="50"
+                                width="50">
                             <h4>Cash</h4>
                             <p>
                             <p><u>Ganti Pembayaran</u></p>

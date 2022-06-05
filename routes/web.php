@@ -90,11 +90,10 @@ Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
+Route::get('poin', 'Pengguna\PoinController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
+
 //Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
-Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
-Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('poin', 'Pengguna\PoinController@poin');
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
@@ -116,8 +115,8 @@ Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); 
 
 
 //Pesanan
-Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('invoice', 'Pesanan\InvoiceController@invoice');
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('invoice', 'Pesanan\InvoiceController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
 
 
 //Informasi Sampah
@@ -126,7 +125,7 @@ Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::get('/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi'); // Muhammad Raffi Priyadiantama - 5026201072
 
 
 

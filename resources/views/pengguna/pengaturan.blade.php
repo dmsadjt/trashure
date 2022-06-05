@@ -21,8 +21,6 @@
 
         span {
             float: right;
-            font-size: 30px;
-
         }
         .card {
             margin-bottom: 5px
