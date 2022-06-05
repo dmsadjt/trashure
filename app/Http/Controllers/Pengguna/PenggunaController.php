@@ -17,4 +17,9 @@ class PenggunaController extends Controller
         return view("pesanan.pilihsampah");
     }
 
+    public function index(){
+        return view('pengguna.penggunadb');
+    }
+
+    //
 }

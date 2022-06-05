@@ -13,7 +13,7 @@ class AdminController extends Controller
         $admin = Auth::user();
 
         // dd($admin);
-        return view('admin.admindb',['admin'=>$admin]);
+        return view('admin.admindb', ['admin'=>$admin]);
     }
 
     public function informasiSampah(){

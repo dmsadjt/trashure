@@ -32,19 +32,19 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('dashboard', 'AdminController@index')->name('dashboard');
-});
+    Route::get('dashboard', 'AdminController@index');
+});//Muhammad Dimas Adijanto - 5026201138
 
 Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'PenggunaController@index');
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'DashboardController@index');
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'DashboardController@index');
 });
 
 Auth::routes();
@@ -67,16 +67,9 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 
 
 //route view dimas
-Route::get('/profilbank', function(){
-    return view('banksampah.profil');
-});
-
-Route::get('/driver-found', function(){
+Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
-
-Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah');
-
 Route::get('/pilih-alamat', function(){
     return view('pengguna.pilih_alamat');
 });
@@ -88,8 +81,10 @@ Route::get('dbmitra', 'Mitra\DashboardController@index');
 
 //route view Ega
 
+//Pengguna
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampah');
@@ -98,8 +93,44 @@ Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampah');
 Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
 Route::get('poin', 'Pengguna\PoinController@poin');
-Route::get('invoice', 'Pesanan\InvoiceController@invoice');
-
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
+
+
+
+//Mitra
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+
+
+//Bank Sampah
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
+
+
+//Pesanan
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
+Route::get('invoice', 'Pesanan\InvoiceController@invoice');
+
+
+//Informasi Sampah
+Route::get('/admin/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
+Route::get('/informasi', 'Pengguna\DashboardController@informasi');
+Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
+Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+
+
+
+//Admin
+
+
+
+
+//other
+Route::get('/layout/layout','HomeController@index');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 Route::get('welcome', 'WelcomeController@welcome');
+
+
+

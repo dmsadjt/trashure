@@ -38,11 +38,16 @@
             <span class="iconify" data-icon="ic:round-account-circle"></span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                    style="display: none;">
+                    @csrf
+                </form>
+            </li>
+        </ul>
         </li>
   </div>
 </nav>
