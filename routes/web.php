@@ -67,11 +67,11 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 
 
 //route view dimas
-Route::get('/profilbank', function(){
+Route::get('/banksampah/profilbank', function(){
     return view('banksampah.profil');
 });
 
-Route::get('/driver-found', function(){
+Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
 
