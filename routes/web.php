@@ -32,19 +32,19 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('dashboard', 'AdminController@index')->name('dashboard');
+    Route::get('dashboard', 'AdminController@index');
 });//Muhammad Dimas Adijanto - 5026201138
 
 Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengguna', 'middleware' => ['auth', 'pengguna']], function () {
-    Route::get('dashboard', 'PenggunaController@index')->name('dashboardPengguna');
+    Route::get('dashboard', 'PenggunaController@index');
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'DashboardController@index');
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'DashboardController@index');
 });
 
 Auth::routes();

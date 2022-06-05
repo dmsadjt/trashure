@@ -15,7 +15,6 @@ class BanksampahController extends Controller
 
     public function profil(){
         $banks = Auth::user();
-
         return view("banksampah.profil", ['banks'=>$banks]);
     }
     //
