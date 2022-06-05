@@ -3,41 +3,117 @@
 @section('text2', 'Informasi')
 
 @section('content')
+    <style>
+        img {
+            margin-left: 100px;
+            float: left;
+        }
+
+        h4,
+        p,
+        h1 {
+            margin-top: -10px
+        }
 
 
+        h4{
+            margin-left: 100px
+        }
 
-    <div class="container">
-        <div class="container-fluid align-self-center col-md-8" style=" margin-top : 2em">
-            <nav class="navbar navbar-light bg-light" id="navtambah">
-                <div class="container-fluid">
-                    <span class="navbar-brand">Pembayaran</span>
-                </div>
-            </nav>
+        span {
+            float: right;
+            font-size: 30px;
+        }
 
+        u {
+            float: right;
+        }
 
-            <form action="/store" method="post">
-                {{ csrf_field() }}
-                <div>
+    </style>
 
-                    <div class="form-group">
-                        Judul Informasi <input class="form-control" type="text" name="name" required="required"> <br />
-                        Informasi
-                        <textarea class="form-control" type="text" name="informasi" required="required"> </textarea> <br />
-                        Gambar <input class="form-control" type="text" name="gambar" required="required"> <br />
+    <body>
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <h3>Alamat </h3>
+                            <br>
+                            <p>RafzNgganteng@gemesl.com
+                            <p>
+                                <br>
+                            <p><u>Edit Profile</u></p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-sm-2"></div>
+            </div>
 
+            <br>
 
-                <nav class="navbar navbar-light bg-light">
-                    <div class="container-fluid justify-content-end">
-                        <a href="/overview-informasi">
-                            <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
-                        </a>
-                        <input type="submit" value="Submit" class="btn btn-success">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <h3>Pembayaran </h3>
+                            <br>
+                            <h4>Cash</h4>
+                            <p>
+                                <br>
+                            <p><u>Edit Profile</u></p>
+                        </div>
                     </div>
-                </nav>
-            </form>
-        </div>
-    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <h3>Jenis Sampah <span>Organik</span> </h3>
+                    sssddsss
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <h3>Saved Address <span>&#62;</span> </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <h3>Change Language <span>&#62;</span> </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+    </body>
 
 @endsection
