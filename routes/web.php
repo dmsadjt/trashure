@@ -40,7 +40,7 @@ Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengg
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'MitraController@index')->name('dashboard');
+    Route::get('dashboard', 'DashboardController@index');
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
@@ -59,6 +59,10 @@ Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit')
 //route hapus data pengguna
 Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
 
+//route view dataMitraRuben
+route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewPengguna');
+
+
 // //route view dataPenggunaRaffi
 // Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
 //route store data pengguna ke DB
@@ -72,7 +76,7 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
-Route::get('/pengguna/pilih-alamat', function(){
+Route::get('/pilih-alamat', function(){
     return view('pengguna.pilih_alamat');
 });
 
@@ -81,48 +85,47 @@ Route::get('/pengguna/pilih-alamat', function(){
 Route::get('/layout/layout','HomeController@index');
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 
-
-Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
-Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
-Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
-
 //route view Ega
 
 //Pengguna
-Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan'); // Ega Fernanda Putra 5026201073
-Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
-
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
+Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
 //Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
+Route::get('poin', 'Pengguna\PoinController@poin');
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
 
 
 //Mitra
+Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('/mitra/pesanan/terima/id', function(){
+    return view('mitra.detail-pesanan');
+});
+
+Route::get('/mitra/pesanan/ambil/id', function(){
+    return view('mitra.ambil-pesanan');
+});
 Route::get('mitradb', 'Mitra\MitraController@index');
 Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 
 //Bank Sampah
-Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks'); // Ega Fernanda Putra 5026201073
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/admin/banksampah/overview', function(){
     return view('admin.overviewDBankSampah');
 });
 
 //Pesanan
-Route::get('/pengguna/pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
-Route::get('/pengguna/pesanan/invoice', 'Pesanan\InvoiceController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
-Route::get('mitra/pesanan/detail-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
-Route::get('mitra/pesanan/ambil-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
-Route::get('mitra/pesanan/selesaikan-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
-Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna'); // Ega Fernanda Putra 5026201073
-Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna'); // Ega Fernanda Putra 5026201073
-Route::get('/pengguna/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh'); // Ega Fernanda Putra 5026201073
-
-
+Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
+Route::get('invoice', 'Pesanan\InvoiceController@invoice');
 
 
 //Informasi Sampah
@@ -131,7 +134,9 @@ Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+
+
 
 //Admin
 

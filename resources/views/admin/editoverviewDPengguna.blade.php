@@ -63,7 +63,7 @@
     </body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid justify-content-end">
-            <a href="/admin/datapengguna/overviewdata">
+            <a href="/admin/pengguna/overviewdata">
             <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
             </a>
             <input type="submit" value="Edit pengguna" class="btn btn-success">
