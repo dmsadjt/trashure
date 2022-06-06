@@ -72,6 +72,7 @@ Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@dafta
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('/pengguna/poin', 'Pengguna\PoinController@poin');
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
+Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah');
 Route::get('/pengguna/pesan/pembayaran', 'Pesanan\PesananController@pembayaran');
 Route::get('/pengguna/pesan/invoice', 'Pesanan\InvoiceController@invoice');
 Route::get('/pengguna/informasi', 'Pengguna\DashboardController@informasi');

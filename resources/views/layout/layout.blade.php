@@ -45,7 +45,7 @@ nav {
     <a class="navbar-brand fw-bold text-light" href="dashboard">TRASHURE</a>
       <ul class="navbar-nav justify-content-end align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-light" aria-current="page" href="#">Pesan</a>
+          <a class="nav-link text-light" aria-current="page" href="/pengguna/pesananpengguna">Pesan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="/informasi">Informasi</a>

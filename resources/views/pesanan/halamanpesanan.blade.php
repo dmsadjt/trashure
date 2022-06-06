@@ -38,13 +38,13 @@
         <div class="card-body">
             <br>
             <div class="d-grid gap-4 col-4 mx-auto">
-                <button onclick ="location.href='{{ url('/pengguna/pilihsampah') }}'" class="btn btn-success" type="button" >Pilih Kategori Sampah</button>
-                <button onclick ="location.href='{{ url('/pengguna/pilih-alamat') }}'" class="btn btn-success" type="button" >Pilih Alamat dan Bank Sampah</button>
+                <button onclick ="location.href='{{ url('/pengguna/pesan/pilihsampah') }}'" class="btn btn-success" type="button" >Pilih Kategori Sampah</button>
+                <button onclick ="location.href='{{ url('/pengguna/pesan/pilih-alamat') }}'" class="btn btn-success" type="button" >Pilih Alamat dan Bank Sampah</button>
               </div>
               <br>
         </div>
         <div class="card-footer text-muted">
-            <button type="button" class="btn btn-primary col-2">Order</button>
+            <button type="button" class="btn btn-primary col-2" onclick ="location.href='{{ url('/pengguna/pesan/pilihsampah') }}'">Order</button>
         </div>
       </div>
 </body>
