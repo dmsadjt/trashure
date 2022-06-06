@@ -113,6 +113,8 @@ Route::get('/mitra/pesanan/terima/id', function(){
 Route::get('/mitra/pesanan/ambil/id', function(){
     return view('mitra.ambil-pesanan');
 });
+Route::get('mitradb', 'Mitra\MitraController@index');
+Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
