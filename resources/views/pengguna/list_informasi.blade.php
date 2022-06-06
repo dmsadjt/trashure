@@ -1,6 +1,7 @@
-@extends('layout.layout')
-@section('konten')
-
+@extends('layouts.navbar-pengguna')
+@section('text1', 'Pesan')
+@section('text2', 'Informasi')
+@section('content')
 
 <!DOCTYPE html>
 <html lang="en">

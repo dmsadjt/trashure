@@ -1,4 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
+@section('text1', 'Pesan')
+@section('text2', 'Informasi')
 @section('content')
     <h1 class="text-center mt-5">Pilih Alamat Pemesanan</h1>
     <div class="peta-placeholder m-5">

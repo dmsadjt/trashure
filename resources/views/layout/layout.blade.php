@@ -42,7 +42,7 @@ nav {
 <!-- Navbar -->
 <nav class="navbar sticky-top navbar-expand-lg text-light">
   <div class="container">
-    <a class="navbar-brand fw-bold text-light" href="#">TRASHURE</a>
+    <a class="navbar-brand fw-bold text-light" href="dashboard">TRASHURE</a>
       <ul class="navbar-nav justify-content-end align-items-center">
         <li class="nav-item">
           <a class="nav-link text-light" aria-current="page" href="#">Pesan</a>
