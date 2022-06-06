@@ -8,7 +8,7 @@
         <div class="row text-center">
             <div class="col">
                 <div class="row">
-                    <a class="btn main-btn">Anggota</a>
+                    <a class="btn main-btn" href="/overviewdata">Pengguna</a>
                 </div>
                 <div class="row">
                     <a class="btn main-btn">Mitra</a>
