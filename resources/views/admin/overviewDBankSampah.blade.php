@@ -1,7 +1,7 @@
 @extends('layouts.navbar-admin')
 @section('content')
     <div class="row mt-5">
-        <h1>Overview Data Informasi</h1>
+        <h1>Overview Data Bank Sampah</h1>
     </div>
     <div class="row mt-5">
         <div class="col">
@@ -18,26 +18,30 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Judul</th>
-                <th scope="col">Informasi</th>
-                <th scope="col">Gambar</th>
-                <th scope="col">Tanggal Pembuatan</th>
+                <th>NAME</th>
+                <th>ROLE ID</th>
+                <th>ADDRESS</th>
+                <th>EMAIL</th>
+                <th>Nomor Telepon</th>
+                <th>Nama Bank Sampah</th>
+                <th>Status Bank</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody id="myTable">
-            @foreach ($informasi as $i)
-            <tr>
-                <th >{{$i->info_id}}</th>
-                <td>{{$i->judul}}</td>
-                <td>{{$i->informasi}}</td>
-                <td><a href="{{$i->gambar}}">{{$i->gambar}}</a></td>
-                <td>{{$i->tanggal_pembuatan}}</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Hapus</a></td>
-            </tr>
+            @foreach ($banks as $b)
+                <tr>
+                    <th>{{ $b->name }}</th>
+                    <td>{{ $b->role_id }}</td>
+                    <td>{{ $b->profile->alamat }}</td>
+                    <td>{{ $b->email}}</td>
+                    <td>{{ $b->profile->no_telepon}}</td>
+                    <td>{{ $b->profile->nama_bank }}</td>
+                    <td>{{ $b->profile->status_bank }} </td>
+                    <td><a href="#">Edit</a></td>
+                    <td><a href="#">Delete</a></td>
+                </tr>
             @endforeach
     </table>
 
