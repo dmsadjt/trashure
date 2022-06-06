@@ -63,7 +63,9 @@
                                             Alamat Penjemputan
                                         </p>
                                         <p class="col-md-1">:
-                                        <p class="col-md-6"> Cash
+                                        <p class="col-md-6">
+                                            {{$pesanan->alamat_pengguna}}
+                                        </p>
                                     </div>
 
                                     <div class="row">
@@ -71,7 +73,9 @@
                                             Alamat Pengantaran
                                         </p>
                                         <p class="col-md-1">:
-                                        <p class="col-md-6"> 60.000
+                                        <p class="col-md-6">
+                                            {{$banks->profile->alamat}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +114,7 @@
                                         Metode Pembayaran
                                     </p>
                                     <p class="col-md-1">:
-                                    <p class="col-md-6"> Cash
+                                    <p class="col-md-6"> {{$pay->jenis_pembayaran}}</p>
                                 </div>
 
                                 <div class="row">
@@ -128,6 +132,15 @@
                 <div class="col-sm-2"></div>
             </div>
         </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <form action="/pengguna/pesan/postPesanan" method="POST">
+                    @csrf
+                    <input type="submit" value="Kirim Pesananmu!" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+
 
 
     </body>

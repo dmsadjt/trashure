@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class PesananController extends Controller
 {
-    public function pembayaran() {
-        $pesanans = DB::table('pesanans')->first();
-        return view("pesanan.pembayaran", compact('pesanans'));
-    }
 
     public function detailPesanan(){
         // $pesanan = DB::table('pesanans')->where('id', id)->get();

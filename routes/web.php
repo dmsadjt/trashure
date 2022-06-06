@@ -75,15 +75,17 @@ Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@dafta
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('/pengguna/poin', 'Pengguna\PoinController@poin');
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
-Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah');
-Route::get('/pengguna/pesan/pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('/pengguna/pesan/invoice', 'Pesanan\InvoiceController@invoice');
+Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah'); //Muhammad Dimas Adijanto - 5026201138
+Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran');
+Route::get('/pengguna/pesan/invoice', 'Pengguna\PenggunaController@invoice');
 Route::get('/pengguna/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/pengguna/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/pengguna/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/pengguna/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('/pengguna/pesan/pilih-alamat', 'Pengguna\PenggunaController@pilihAlamat');//Muhammad Dimas Adijanto - 5026201138
-
+Route::get('/pengguna/pesan/pilih-alamat', 'Pengguna\PenggunaController@pilihAlamat'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postAlamat', 'Pengguna\PenggunaController@postAlamat'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postPembayaran', 'Pengguna\PenggunaController@postPembayaran'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postPesanan', 'Pengguna\PenggunaController@postPesanan'); //Muhammad Dimas Adijanto - 5026201138
 
 
 //Mitra

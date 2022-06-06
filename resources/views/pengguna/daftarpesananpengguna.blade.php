@@ -1,6 +1,4 @@
-@extends('layouts.layout')
-@section('text1', 'Pesan')
-@section('text2', 'Informasi')
+@extends('layouts.navbar-pengguna')
 
 @section('content')
 <style>

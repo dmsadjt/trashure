@@ -42,6 +42,7 @@
         </div>
 
         <form class="mt-3" action="/pengguna/pesan/postsampah" method="POST">
+            @csrf
             <div class="card text-center bg-light">
                 <div class="card-header">
                     Choose Trash Type
@@ -66,10 +67,10 @@
                             <div class="row align-items-center">
                                 <br> <br>
                                 <div class="col-sm-12">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" id="jenis_sampah" name="jenis_sampah" aria-label="Default select example">
                                         <option selected>Select Trash Type</option>
-                                        <option value="1">Organic</option>
-                                        <option value="2">Anorganic</option>
+                                        <option value="Organic">Organic</option>
+                                        <option value="Anorganic">Anorganic</option>
                                     </select>
                                     <div class="form-group mt-2">
                                         <label for="volume">Volume (kg)</label>
