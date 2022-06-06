@@ -13,7 +13,6 @@ class AdminController extends Controller
     public function index(){
         $admin = Auth::user();
 
-        // dd($admin);
         return view('admin.admindb', ['admin'=>$admin]);
     }
 
@@ -27,16 +26,12 @@ class AdminController extends Controller
 
     public function overviewPengguna()
     {
-        // $pengguna = DB::table('users')
-        //                     ->join('profils', 'profils.user_id','=','users.id')//Join sm profil
-        //                     ->where('role_id','2')//Filter pengguna sj
-        //                     ->get();
-
         $pengguna = User::where('role_id', 2)->get();
 
         return view('admin.overviewDPengguna', ['pengguna'=>$pengguna]);
-
     }
+
+
     public function dataRoles(){
         $roles = DB::Table('roles')
                         ->orderBy('id')

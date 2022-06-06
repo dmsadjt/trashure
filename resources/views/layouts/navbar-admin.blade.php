@@ -33,16 +33,16 @@
             <a class="navbar-brand fw-bold text-light" href="/home">TRASHURE</a>
             <ul class="navbar-nav justify-content-end align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Informasi</a>
+                    <a class="nav-link text-light" href="/admin/informasi/overview-informasi">Informasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Pengguna</a>
+                    <a class="nav-link text-light" href="/admin/pengguna/overviewdata">Pengguna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Mitra</a>
+                    <a class="nav-link text-light" href="/admin/mitra/overviewdata">Mitra</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Bank Sampah</a>
+                    <a class="nav-link text-light" href="/admin/banksampah/overview">Bank Sampah</a>
                 </li>
                 <li class="dropdown-center">
                     <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"

@@ -8,19 +8,19 @@
         <div class="row text-center">
             <div class="col">
                 <div class="row">
-                    <a class="btn main-btn" href="/overviewdata">Pengguna</a>
+                    <a class="btn main-btn" href="/admin/pengguna/overviewdata">Pengguna</a>
                 </div>
                 <div class="row">
-                    <a class="btn main-btn">Mitra</a>
+                    <a class="btn main-btn" href="/admin/mitra/overviewdata">Mitra</a>
 
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <a class="btn main-btn">Bank Sampah</a>
+                    <a class="btn main-btn" href="/admin/banksampah/overview">Bank Sampah</a>
                 </div>
                 <div class="row">
-                    <a class="btn main-btn" href="/admin/overview-informasi">Informasi Sampah</a>
+                    <a class="btn main-btn" href="/admin/informasi/overview-informasi">Informasi Sampah</a>
                 </div>
             </div>
         </div>
