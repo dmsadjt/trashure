@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 @section('content')
@@ -38,8 +38,8 @@
         <div class="card-body">
             <br>
             <div class="d-grid gap-4 col-4 mx-auto">
-                <button onclick ="location.href='{{ url('pilihsampah') }}'" class="btn btn-success" type="button" >Pilih Kategori Sampah</button>
-                <button onclick ="location.href='{{ url('pilih-alamat') }}'" class="btn btn-success" type="button" >Pilih Alamat dan Bank Sampah</button>
+                <button onclick ="location.href='{{ url('/pengguna/pilihsampah') }}'" class="btn btn-success" type="button" >Pilih Kategori Sampah</button>
+                <button onclick ="location.href='{{ url('/pengguna/pilih-alamat') }}'" class="btn btn-success" type="button" >Pilih Alamat dan Bank Sampah</button>
               </div>
               <br>
         </div>

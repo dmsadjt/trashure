@@ -76,7 +76,7 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
-Route::get('/pilih-alamat', function(){
+Route::get('/pengguna/pilih-alamat', function(){
     return view('pengguna.pilih_alamat');
 });
 
