@@ -49,15 +49,15 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
 
 Auth::routes();
 //route view dataPenggunaRuben
-Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
+Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPengguna');
 //route tambah data pengguna
-Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData');
 //route store data pengguna ke DB
-Route::post('/store','DBPenggunaController@store');
+Route::post('/storePengguna','DBPenggunaController@storePengguna');
 //route edit data pengguna
-Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
+Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit');
 //route hapus data pengguna
-Route::get('/hapusdatapengguna/{id}','DBPenggunaController@hapus');
+Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
 
 // //route view dataPenggunaRaffi
 // Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
@@ -72,21 +72,21 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
-Route::get('/pilih-alamat', function(){
+Route::get('/pengguna/pilih-alamat', function(){
     return view('pengguna.pilih_alamat');
 });
 
 
 
 Route::get('/layout/layout','HomeController@index');
-
+Route::get('dbmitra', 'Mitra\DashboardController@index');
 
 
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
-
+Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 
 //route view Ega
 

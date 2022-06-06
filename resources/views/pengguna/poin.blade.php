@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
@@ -23,36 +23,45 @@
             float: right;
         }
 
+        h3 {
+
+            padding-left: 22px;
+            padding-top: 50px
+        }
+
         .card {
             margin-bottom: 5px
         }
-
     </style>
 
     <body>
         <div class="container">
             <br>
             <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
-                            <img src="{{ URL::asset('/image/poins.png') }}" alt="poin Pic" height="125" width="125">
-                            <h3>...</h3>
-
+                            <div class="row align-item-center">
+                                <div class="col-sm-5"><img src="{{ url('/image/poins.png') }}" class="rounded"
+                                        alt="" width="150"></div><br>
+                                <div class="col-sm-7">
+                                    <h3><b>0 Poin<b>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
 
                 </div>
-                <div class="col-sm-2"></div>
+                <div class="col-sm-3"></div>
             </div>
 
             <br>
 
             <div class="row">
                 <div class="col-sm-4">
-                    <h3>History</h3>
+                    <h4>History</h4>
                 </div>
                 <div class="col-sm-6"></div>
                 <div class="col-sm-2"></div>
@@ -61,9 +70,9 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body" style="display: inline-block">
-                        <h3>Juni 2022 </h3>
+                        <h4>Juni 2022 </h4>
                         <br>
-                        <p>Top Up Credit 50000  <span>+ 5 Point</span>
+                        <p>Top Up Credit 50000 <span>+ 5 Point</span>
                     </div>
                 </div>
             </div>

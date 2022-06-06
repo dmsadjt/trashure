@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
@@ -26,7 +26,6 @@
         .card {
             margin-bottom: 5px
         }
-
     </style>
 
     <body>
@@ -48,19 +47,45 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
-                            <img src="{{ URL::asset('/image/bookmark.png') }}" alt="bookmark Pic" height="125"
-                                width="125">
-                            <h3>Informasi Pengiriman </h3>
-                            <div class="text">
-                                <h2><b>Rafz Ngganteng</b></h2>
-                            </div>
-                        </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div>
+                                        <img src="{{ URL::asset('/image/bookmark.png') }}" alt="bookmark Pic" height="100"
+                                            width="100">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div>
+                                        <h3>Informasi Pengiriman </h3>
+                                    </div>
+                                    <div class="row">
+                                        <p class="col-md-5">
+                                            Alamat Penjemputan
+                                        </p>
+                                        <p class="col-md-1">:
+                                        <p class="col-md-6"> Cash
+                                    </div>
 
+                                    <div class="row">
+                                        <p class="col-md-5">
+                                            Alamat Pengantaran
+                                        </p>
+                                        <p class="col-md-1">:
+                                        <p class="col-md-6"> 60.000
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
+
+                    <div class="col-sm-2"></div>
                 </div>
-                <div class="col-sm-2"></div>
+
             </div>
+
+
 
             <br>
 
@@ -69,11 +94,32 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
-                            <img src="{{ URL::asset('/image/credit.png') }}" alt="biaya Pic" height="125"
-                                width="125">
-                            <h3>Rincian Biaya </h3>
-                            <div class="text">
-                                <h2><b>Rafz Ngganteng</b></h2>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                <div>
+                                    <img src="{{ URL::asset('/image/credit.png') }}" alt="biaya Pic" height="100"
+                                        width="100">
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div>
+                                    <h3>Rincian Biaya </h3>
+                                </div>
+                                <div class="row">
+                                    <p class="col-md-5">
+                                        Metode Pembayaran
+                                    </p>
+                                    <p class="col-md-1">:
+                                    <p class="col-md-6"> Cash
+                                </div>
+
+                                <div class="row">
+                                    <p class="col-md-5">
+                                        Total Tagihan
+                                    </p>
+                                    <p class="col-md-1">:
+                                    <p class="col-md-6"> 60.000
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,6 +127,9 @@
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+        </div>
+
+
     </body>
 
 @endsection

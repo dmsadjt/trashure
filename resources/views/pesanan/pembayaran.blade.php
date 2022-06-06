@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
@@ -40,8 +40,9 @@
                         <div class="card-body" style="display: inline-block">
                             <h3>Alamat </h3>
                             <br>
-                            <p>RafzNgganteng@gemesl.com
-                            <p>
+
+                            <p>RafzNgganteng@gemesl.com</p>
+
                                 <br>
                             <p><u>Edit Profile</u></p>
                         </div>
