@@ -44,8 +44,8 @@
                 </div>
 
                 <div class="col">
-                    <a href="/admin/pengguna/adddatapengguna">
-                        <button type="button" class="btn btn-primary">+ Tambah Data Pengguna</button>
+                    <a href="/admin/mitra/adddatamitra">
+                        <button type="button" class="btn btn-primary">+ Tambah Mitra</button>
                     </a>
                 </div>
             </div>
@@ -71,22 +71,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($pengguna as $p)
+                @foreach ($mitra as $m)
                     <tr>
                         <td><input type="checkbox"></td>
-                        <td>{{ $p->name }}</td>
-                        <td>{{ $p->role_id }}</td>
-                        <td>{{ $p->profile->alamat }}</td>
-                        <td>{{ $p->email }}</td>
+                        <td>{{ $m->name }}</td>
+                        <td>{{ $m->role_id }}</td>
+                        <td>{{ $m->profile->alamat }}</td>
+                        <td>{{ $m->email }}</td>
                         {{-- <td>{{ $p->password }}</td> --}}
-                        <td>{{ $p->profile->no_telepon }}</td>
-                        <td>{{ $p->profile->no_rekening }}</td>
+                        <td>{{ $m->profile->no_telepon }}</td>
+                        <td>{{ $m->profile->no_rekening }}</td>
 
                         <td>
-                            <a href="/admin/pengguna/editdatapengguna/{{ $p->id }}">
+                            <a href="/admin/mitra/editdatamitra/{{ $m->id }}">
                                 <input type="button" id="editButton" value="edit">
                             </a>
-                            <a href="/admin/pengguna/hapusdatapengguna/{{ $p->id }}">
+                            <a href="/admin/mitra/hapusdatamitra/{{ $m->id }}">
                                 <input type="button" id="deleteButton" value="delete">
                             </a>
 

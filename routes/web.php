@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DBPenggunaController;
+use App\Http\Controllers\Mitra\DBMitraController;
 
 ///Auth
 Route::get('/', function () {
@@ -60,7 +61,8 @@ Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit')
 Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
 
 //route view dataMitraRuben
-route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewPengguna');
+Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
+Route::get('/admin/mitra/adddatamitra', 'Mitra\DBMitraController@tambahDataMitra');
 
 
 // //route view dataPenggunaRaffi
