@@ -56,7 +56,7 @@
 
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid justify-content-end">
-                        <a href="/overview-informasi">
+                        <a href="/admin/overview-informasi">
                             <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
                         </a>
                         <input type="submit" value="Submit" class="btn btn-success">
