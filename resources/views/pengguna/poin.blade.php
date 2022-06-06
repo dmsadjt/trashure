@@ -38,7 +38,7 @@
                     <div class="card">
                         <div class="card-body" style="display: inline-block">
                             <img src="{{ URL::asset('/image/poins.png') }}" alt="poin Pic" height="125" width="125">
-                            <h3>...</h3>
+                            <h3>0 Poin</h3>
 
                         </div>
 
