@@ -18,7 +18,6 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-
                 <th scope="col">ID</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Informasi</th>

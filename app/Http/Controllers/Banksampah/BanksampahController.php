@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class BanksampahController extends Controller
 {
@@ -18,4 +19,9 @@ class BanksampahController extends Controller
         return view("banksampah.profil", ['banks'=>$banks]);
     }
     //
+
+    public function overviewData(){
+        $banks = User::where('role_id', 4);
+        return view('admin.overviewDBankSampah', ['banks'=>$banks]);
+    }
 }

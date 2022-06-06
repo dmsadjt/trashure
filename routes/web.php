@@ -107,7 +107,9 @@ Route::get('dbmitra', 'Mitra\DashboardController@index');
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks'); // Ega Fernanda Putra 5026201073
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
-
+Route::get('/admin/banksampah/overview', function(){
+    return view('admin.overviewDBankSampah');
+});
 
 //Pesanan
 Route::get('/pengguna/pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
