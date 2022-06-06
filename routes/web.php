@@ -40,11 +40,7 @@ Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengg
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-<<<<<<< Updated upstream
-    Route::get('dashboard', 'DashboardController@index');
-=======
     Route::get('dashboard', 'MitraController@index')->name('dashboard');
->>>>>>> Stashed changes
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
@@ -83,9 +79,7 @@ Route::get('/pengguna/pilih-alamat', function(){
 
 
 Route::get('/layout/layout','HomeController@index');
-<<<<<<< Updated upstream
 Route::get('dbmitra', 'Mitra\DashboardController@index');
-=======
 
 
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
@@ -93,7 +87,6 @@ Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananba
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
->>>>>>> Stashed changes
 
 //route view Ega
 
