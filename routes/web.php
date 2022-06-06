@@ -119,9 +119,7 @@ Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
-Route::get('/admin/banksampah/overview', function(){
-    return view('admin.overviewDBankSampah');
-});
+Route::get('/admin/banksampah/overview', 'Banksampah\BanksampahController@overviewData');
 
 //Pesanan
 Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');

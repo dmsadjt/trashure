@@ -21,7 +21,8 @@ class BanksampahController extends Controller
     //
 
     public function overviewData(){
-        $banks = User::where('role_id', 4);
+        $banks = User::where('role_id', 4)->get();
         return view('admin.overviewDBankSampah', ['banks'=>$banks]);
+
     }
 }
