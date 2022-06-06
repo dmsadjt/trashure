@@ -115,8 +115,8 @@ Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); 
 
 
 //Pesanan
-Route::get('pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
-Route::get('invoice', 'Pesanan\InvoiceController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('/pengguna/pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('/pengguna/pesanan/invoice', 'Pesanan\InvoiceController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
 
 
 //Informasi Sampah
