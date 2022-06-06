@@ -90,7 +90,7 @@ Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
-Route::get('poin', 'Pengguna\PoinController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
 
 //Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
