@@ -34,15 +34,15 @@
             </nav>
 
 
-            <form action="/store" method="post">
+            <form action="/storePengguna" method="post">
                 {{ csrf_field() }}
                 <div>
 
                     <div class="form-group">
-                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required">
-                            <option value="" selected="" disabled="">--SELECT--</option>
+                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required" disabled>
+                            <option value="" >--SELECT--</option>
                             <option value="1">1 - Administrator</option>
-                            <option value="2">2 - Pengguna</option>
+                            <option value="2" selected>2 - Pengguna</option>
                             <option value="3">3 - Mitra</option>
                             <option value="4">4 - Bank sampah</option>
                         </select> <br />
@@ -61,7 +61,7 @@
     </body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid justify-content-end">
-            <a href="/overviewdata">
+            <a href="/admin/pengguna/overviewdata">
             <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
             </a>
             <input type="submit" value="Add customer" class="btn btn-success">

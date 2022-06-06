@@ -29,7 +29,7 @@
         <div class="container-fluid align-self-center " style="width: 50% ; height : 50% ">
             <nav class="navbar navbar-light bg-light" id="navtambah">
                 <div class="container-fluid">
-                    <span class="navbar-brand">Add customer</span>
+                    <span class="navbar-brand">Edit pengguna</span>
                 </div>
             </nav>
 
@@ -40,20 +40,20 @@
                     @foreach ($users as $p)
                     <div class="form-group">
 
-                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required">
-                            <option value="" selected="" disabled="">--SELECT--</option>
+                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required" disabled>
+                            <option value="">--SELECT--</option>
                             <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="2" selected>2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select> <br />
                         Customer name <input class="form-control" type="text" name="name" value="{{ $p->name }}" required="required"> <br />
                         Address
-                        <textarea class="form-control" type="text" name="alamat"  required="required">{{ $p->alamat }}</textarea> <br />
+                        <textarea class="form-control" type="text" name="alamat"  required="required">{{ $p->profile->alamat }}</textarea> <br />
                         Email <input class="form-control" type="text" name="email" value="{{ $p->email }}" required="required"> <br />
                         {{-- Password <input class="form-control" name="password" value="{{ $p->password }}" required="required"> <br /> --}}
-                        Phone number <input class="form-control" name="no_telepon" value="{{ $p->no_telepon }}" required="required"> <br />
-                        Nomor rekening <input class="form-control" name="no_rekening" value="{{ $p->no_rekening }}" required="required"> <br />
+                        Phone number <input class="form-control" name="no_telepon" value="{{ $p->profile->no_telepon }}" required="required"> <br />
+                        Nomor rekening <input class="form-control" name="no_rekening" value="{{ $p->profile->no_rekening }}" required="required"> <br />
                     </div>
                     @endforeach
                 </div>
@@ -63,10 +63,10 @@
     </body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid justify-content-end">
-            <a href="/overviewdata">
+            <a href="/admin/datapengguna/overviewdata">
             <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
             </a>
-            <input type="submit" value="Add customer" class="btn btn-success">
+            <input type="submit" value="Edit pengguna" class="btn btn-success">
         </div>
     </nav>
     </div>
