@@ -40,11 +40,7 @@ Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengg
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-<<<<<<< Updated upstream
-    Route::get('dashboard', 'DashboardController@index');
-=======
     Route::get('dashboard', 'MitraController@index')->name('dashboard');
->>>>>>> Stashed changes
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
@@ -83,17 +79,14 @@ Route::get('/pilih-alamat', function(){
 
 
 Route::get('/layout/layout','HomeController@index');
-<<<<<<< Updated upstream
-Route::get('dbmitra', 'Mitra\DashboardController@index');
-=======
+
 
 
 Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
-Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
->>>>>>> Stashed changes
+
 
 //route view Ega
 
@@ -109,7 +102,8 @@ Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
 //Mitra
-Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('mitradb', 'Mitra\MitraController@index');
+Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks'); // Ega Fernanda Putra 5026201073

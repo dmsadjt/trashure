@@ -28,7 +28,11 @@
     margin-right: 60px;
 }
 .text {
-    margin-left: 150px
+    margin-left: 250px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 0.7em;
 }
 .driver {
     margin-left: 50px;
@@ -38,6 +42,31 @@ table {
     margin-top: 60px;
 }
 
+.ongoing {
+    width: 1248px;
+    height: 408px;
+}
+
+.konten2 {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trukSampah {
+    width: 433.05px;
+    height: 407.89px;
+    margin-left: 50px;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
+}
+
+.text-mitra {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #000000;
+}
+
 
     </style>
 <body>
@@ -45,135 +74,82 @@ table {
 <div class="container">
     <div class="row mb-5 mt-5">
             <div class="col-sm-2"></div>
-            <div class="col-sm-8">  <div class="card">
-                <div class="card-body" style="display: inline-block">
-                <ul class="nav nav-tab nav-justified " role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-bs-toggle="tab" href="#history"><b>History</b></a>
-                    </li>
-                    <li class="nav-item" id="nav2">
-                      <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
-                    </li>
-                    <li class="nav-item" id="nav2">
-                        <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b></b></a>
-                    </li>
-
-                  </ul>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <ul class="nav nav-tab nav-justified " role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#history"><b>History</b></a>
+                                </li>
+                                <li class="nav-item" id="nav2">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
+                                </li>
+                                <li class="nav-item" id="nav2">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Available</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </div>
+
 
 
     <div class="row">
                   <!-- Tab panes -->
-                  <div class="tab-content">
+                <div class="tab-content">
                     <div id="history" class="container tab-pane active"><br>
-                        <div class="card">
-                            <div class="card-body" style="display: inline-block"> <img
-                                    src="{{ URL::asset('/image/paper.png') }}"  height="120" width="100"
-                                    class="float-start">
+                        <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body">
+                                <img src="{{url('/pemungut.png')}}"  height="120" width="100" class="float-start">
                                 <div class="text">
-                                    <h3><b>Angkut Sampah</b> </h3>
-                                    <h5><span class ="a"> Trash Delivered <span></h5>
-                                    <h5><br>Tujuan : Bank Sampah Induk Surabaya<span class = "c"> 17 July 2000, 09.00 PM<span></h5>
-
-
+                                    <h3>TRASH DELIVERED <br>29 June 2022, 01.00 PM</h3>
                                 </div>
                             </div>
-
                         </div>
+
                         <br>
+
                         <div class="card">
-                            <div class="card-body" style="display: inline-block"> <img
-                                    src="{{ URL::asset('/image/paper.png') }}"  height="120" width="100"
-                                    class="float-start">
+                            <div class="card-body" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                                <img src="{{url('/pemungut.png')}}"  height="120" width="100" class="float-start">
                                 <div class="text">
-                                    <h3><b>Angkut Sampah</b> </h3>
-                                    <h5><span class ="a"> Trash Delivered <span></h5>
-                                    <h5><br>Tujuan : Bank Sampah Bintang Mangrove<span class = "c"> 15 June 2021, 10.40PM<span></h5>
-
-
+                                    <h3>TRASH DELIVERED <br>6 June 2022, 10.00 AM</h3>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
+
                     <div id="ongoing" class="container tab-pane fade" style = "align-text: center" ><br>
-                      <h3 style="text-align: center"><b>ORDER IT'S ON THE WAY NOW!</b></h3>
-
-                      <img src="{{ URL::asset('/image/truck2.png') }}" alt="profile Pic" height="110" width="110" class="mx-auto d-block">
-                      <div class="card">
-                        <div class="row align-items center">
-                            <div class="col-sm-3">
-                         <div class="card-body" style="display: inline-block"> <img
-                            src="{{ URL::asset('/image/ega.png') }}" alt="Card image"
-                                    >
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <table class="table">
-                                    <thead align="left">
-                                        <th></th>
-                                        <th>Driver</th>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        </tr>
-                                        <tr>
-                                        <td>Driver Name : </td>
-                                        <td><b>Ega Fernanda Putra<b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>License Plate : </td>
-                                        <td><b>L 6519 AD<b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vehicle Used : </td>
-                                        <td><b>CBR 250 RR<b></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phone Number : </td>
-                                        <td><b>+6281332970326<b></td>
-                                    </tr>
-                                </tbody>
-                                </table>
-                            </div>
-
-                            <div class="col-sm-3">
-                                <table class="table">
-                                    <thead align="left">
-                                        <th>      </th>
-                                        <th>Destination</th>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>From :   </td>
-                                        <td><b> Perumahan Pandansari 3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>To :</td>
-                                        <td><b>Vrindavan Waste Bank<b></td>
-                                    </tr>
-
-                                </tbody>
-                                </table>
-                            </div>
+                        <div class="card konten2">
+                            <div class="card-body ongoing">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img src="{{url('/garbage_truck.png')}}" class="trukSampah">
                                     </div>
-
-
-
-                                  </div>
-
+                                    <div class="col-6 my-auto">
+                                        <div class="text-mitra">
+                                            <h3>ANDA SEDANG MENGAMBIL <br>PESANAN DARI USER : <br><br>RUBEN BUDIONO</h3>
+                                        </div>
+                                    </div>
                                 </div>
-                  </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
                 </div>
-            </div>
     </div>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-    </body>
+</div>
+
+</body>
 @endsection
 
