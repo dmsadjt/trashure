@@ -19,7 +19,7 @@
         <thead>
             <tr>
 
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Informasi</th>
                 <th scope="col">Gambar</th>
@@ -31,14 +31,14 @@
         <tbody id="myTable">
             @foreach ($informasi as $i)
             <tr>
-                <th>#</th>
+                <th >{{$i->info_id}}</th>
                 <td>{{$i->judul}}</td>
                 <td>{{$i->informasi}}</td>
                 <td><a href="{{$i->gambar}}">{{$i->gambar}}</a></td>
                 <td>{{$i->tanggal_pembuatan}}</td>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Hapus</a></td>
-            </tr>ed
+            </tr>
             @endforeach
     </table>
 
