@@ -21,5 +21,10 @@ class PenggunaController extends Controller
         return view('pengguna.penggunadb');
     }
 
+    public function poin() {
+        return view("pengguna.poin");
+    }
+
+
     //
 }
