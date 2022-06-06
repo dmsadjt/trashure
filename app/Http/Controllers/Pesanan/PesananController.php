@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Pesanan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Pesanan;
+use Illuminate\Support\Facades\DB;
 
 class PesananController extends Controller
 {
     public function pembayaran() {
-        return view("pesanan.pembayaran");
+        $pesanans = DB::table('pesanans')->first();
+        return view("pesanan.pembayaran", compact('pesanans'));
     }
 
     public function DetailPesanan(){

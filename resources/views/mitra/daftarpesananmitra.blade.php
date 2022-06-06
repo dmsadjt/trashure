@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-mitra')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 

@@ -21,4 +21,6 @@ class DashboardController extends Controller
         $informasi = DB::table('informasi_sampahs')->where('info_id', $id)->get();
         return view('informasi.organik',['informasi'=>$informasi]);
     }
+
+    
 }
