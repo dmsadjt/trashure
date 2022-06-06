@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,14 +25,25 @@ class AdminController extends Controller
         return view('admin.overviewDInformasi', ['informasi' => $informasi]);
     }
 
-    public function dataPengguna(){
-        $pengguna = DB::Table('users')
+    public function overviewPengguna()
+    {
+        // $pengguna = DB::table('users')
+        //                     ->join('profils', 'profils.user_id','=','users.id')//Join sm profil
+        //                     ->where('role_id','2')//Filter pengguna sj
+        //                     ->get();
+
+        $pengguna = User::where('role_id', 2)->get();
+
+        return view('admin.overviewDPengguna', ['pengguna'=>$pengguna]);
+
+    }
+    public function dataRoles(){
+        $roles = DB::Table('roles')
                         ->orderBy('id')
                         ->paginate(5);
 
-        return view('admin.overviewDPengguna', ['pengguna' => $pengguna]);
+        return view('admin.overviewDPengguna', ['roles' => $roles]);
     }
-
     public function create()
     {
         return view('informasi.nambahinformasi');

@@ -49,15 +49,15 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
 
 Auth::routes();
 //route view dataPenggunaRuben
-Route::get('/overviewdata', 'Admin\AdminController@dataPengguna');
+Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPengguna');
 //route tambah data pengguna
-Route::get('/adddatapengguna', 'DBPenggunaController@tambahData');
+Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData');
 //route store data pengguna ke DB
-Route::post('/store','DBPenggunaController@store');
+Route::post('/storePengguna','DBPenggunaController@storePengguna');
 //route edit data pengguna
-Route::get('/editdatapengguna/{id}', 'DBPenggunaController@edit');
+Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit');
 //route hapus data pengguna
-Route::get('/hapusdatapengguna/{id}','DBPenggunaController@hapus');
+Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
 
 // //route view dataPenggunaRaffi
 // Route::get('/overview-informasi', 'Informasi\DBInformasiController@overviewInformasi');
@@ -102,7 +102,8 @@ Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
 //Mitra
-Route::get('dbmitra', 'Mitra\DashboardController@index');
+Route::get('mitradb', 'Mitra\MitraController@index');
+Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
 
 //Bank Sampah
 Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks'); // Ega Fernanda Putra 5026201073
