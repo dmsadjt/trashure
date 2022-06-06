@@ -1,43 +1,85 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
 @section('content')
+    <style>
+        img {
+            margin-left: 30px;
+            float: left;
+        }
 
+        .text {
+            margin-left: 325px;
+        }
 
+        h4,
+        p,
+        h1 {
+            margin-top: -10px
+        }
 
-    <div class="container">
-        <div class="container-fluid align-self-center col-md-8" style=" margin-top : 2em">
-            <nav class="navbar navbar-light bg-light" id="navtambah">
-                <div class="container-fluid">
-                    <span class="navbar-brand">Poin</span>
+        span {
+            float: right;
+        }
+
+        h3 {
+
+            padding-left: 22px;
+            padding-top: 50px
+        }
+
+        .card {
+            margin-bottom: 5px
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body" style="display: inline-block">
+                            <div class="row align-item-center">
+                                <div class="col-sm-5"><img src="{{ url('/image/poins.png') }}" class="rounded"
+                                        alt="" width="150"></div><br>
+                                <div class="col-sm-7">
+                                    <h3><b>0 Poin<b>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-            </nav>
+                <div class="col-sm-3"></div>
+            </div>
 
+            <br>
 
-            <form action="/store" method="post">
-                {{ csrf_field() }}
-                <div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>History</h4>
+                </div>
+                <div class="col-sm-6"></div>
+                <div class="col-sm-2"></div>
+            </div>
 
-                    <div class="form-group">
-                        Judul Informasi <input class="form-control" type="text" name="name" required="required"> <br />
-                        Informasi
-                        <textarea class="form-control" type="text" name="informasi" required="required"> </textarea> <br />
-                        Gambar <input class="form-control" type="text" name="gambar" required="required"> <br />
+            <div class="row">
+                <div class="card">
+                    <div class="card-body" style="display: inline-block">
+                        <h4>Juni 2022 </h4>
+                        <br>
+                        <p>Top Up Credit 50000 <span>+ 5 Point</span>
                     </div>
                 </div>
+            </div>
 
-
-                <nav class="navbar navbar-light bg-light">
-                    <div class="container-fluid justify-content-end">
-                        <a href="/overview-informasi">
-                            <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
-                        </a>
-                        <input type="submit" value="Submit" class="btn btn-success">
-                    </div>
-                </nav>
-            </form>
         </div>
-    </div>
+        </div>
+
+    </body>
 
 @endsection

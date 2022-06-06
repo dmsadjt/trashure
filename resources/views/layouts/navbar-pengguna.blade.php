@@ -27,21 +27,28 @@
     <a class="navbar-brand fw-bold text-light" href="/home">TRASHURE</a>
       <ul class="navbar-nav justify-content-end align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-light" aria-current="page" href="pesananpengguna">@yield('text1')</a>
+          <a class="nav-link text-light" aria-current="page" href="/pengguna/pesananpengguna">@yield('text1')</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">@yield('text2')</a>
+          <a class="nav-link text-light" href="/informasi">@yield('text2')</a>
         </li>
         <li class="dropdown-center">
-          <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="iconify" data-icon="ic:round-account-circle"></span>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+            <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="iconify" data-icon="ic:round-account-circle"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                        style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+            </ul>
         </li>
   </div>
 </nav>

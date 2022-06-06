@@ -40,7 +40,7 @@ Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengg
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'DashboardController@index');
+    Route::get('dashboard', 'MitraController@index')->name('dashboard');
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
@@ -72,7 +72,7 @@ Route::get('/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/pengguna/pesanan/driver-found', function(){
     return view('pengguna.driver_found');
 });
-Route::get('/pilih-alamat', function(){
+Route::get('/pengguna/pilih-alamat', function(){
     return view('pengguna.pilih_alamat');
 });
 
@@ -81,20 +81,21 @@ Route::get('/pilih-alamat', function(){
 Route::get('/layout/layout','HomeController@index');
 Route::get('dbmitra', 'Mitra\DashboardController@index');
 
+
+Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
+Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
+Route::get('daftarpesananmitra', 'Mitra\MitraController@daftarpesanan');
+
 //route view Ega
 
 //Pengguna
-Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
-Route::get('pengaturan', 'Pengguna\PengaturanController@pengaturan');
-Route::get('daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
-Route::get('pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
-Route::get('pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
+Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan'); // Ega Fernanda Putra 5026201073
+Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
+
 //Route::get('editprofile', 'Pengguna\PengaturanController@editprofile');
 
-Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
-Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('poin', 'Pengguna\PoinController@poin');
 Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 
@@ -102,22 +103,23 @@ Route::get('overviewDPengguna', 'DBPenggunaController@overviewPengguna');
 
 //Mitra
 Route::get('dbmitra', 'Mitra\DashboardController@index');
-Route::get('/mitra/pesanan/terima/id', function(){
-    return view('mitra.detail-pesanan');
-});
-
-Route::get('/mitra/pesanan/ambil/id', function(){
-    return view('mitra.ambil-pesanan');
-});
 
 //Bank Sampah
-Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
+Route::get('daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks'); // Ega Fernanda Putra 5026201073
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
 
 
 //Pesanan
-Route::get('pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('invoice', 'Pesanan\InvoiceController@invoice');
+Route::get('/pengguna/pembayaran', 'Pesanan\PesananController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('/pengguna/pesanan/invoice', 'Pesanan\InvoiceController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('mitra/pesanan/detail-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
+Route::get('mitra/pesanan/ambil-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
+Route::get('mitra/pesanan/selesaikan-pesanan', 'Pesanan\PesananController@DetailPesanan');// Muhammad Dimas Adijanto - 5026201138
+Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna'); // Ega Fernanda Putra 5026201073
+Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna'); // Ega Fernanda Putra 5026201073
+Route::get('/pengguna/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh'); // Ega Fernanda Putra 5026201073
+
+
 
 
 //Informasi Sampah
@@ -126,9 +128,7 @@ Route::get('/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
-
-
+Route::get('/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi'); // Muhammad Raffi Priyadiantama - 5026201072
 
 //Admin
 

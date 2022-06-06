@@ -24,7 +24,7 @@ class CreatePesanansTable extends Migration
             $table->string('jenis_sampah');
             $table->integer('volume');
             $table->date('waktu_pemesanan');
-            $table->date('status_pesanan');
+            $table->string('status_pesanan');
             $table->integer('opsi_pembayaran');
             $table->string('alamat_pengguna');
 

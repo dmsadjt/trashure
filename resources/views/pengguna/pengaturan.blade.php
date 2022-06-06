@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbar-pengguna')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
@@ -21,8 +21,6 @@
 
         span {
             float: right;
-            font-size: 30px;
-
         }
         .card {
             margin-bottom: 5px

@@ -58,7 +58,6 @@ class DBPenggunaController extends Controller
 }
 public function hapus($id)
     {
-
         // menghapus data pengguna berdasarkan id yang dipilih
         DB::table('users')->where('id', $id)->delete();
         DB::table('profils')->where('user_id',$id)->delete();
@@ -67,3 +66,6 @@ public function hapus($id)
         return redirect('admin/pengguna/overviewdata');
     }
 }
+
+// CONTROLLER ADMIN
+
