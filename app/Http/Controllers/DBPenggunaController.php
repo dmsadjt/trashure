@@ -56,6 +56,7 @@ class DBPenggunaController extends Controller
 	return view('admin.editoverviewDPengguna',['users' => $users]);
 
 }
+
 public function hapus($id)
     {
         // menghapus data pengguna berdasarkan id yang dipilih
@@ -67,5 +68,12 @@ public function hapus($id)
     }
 }
 
-// CONTROLLER ADMIN
+
+// CONTROLLER MITRA
+
+class DBMitraController extends Controller {
+    public function overviewMitra(){
+        return view('admin.overviewDMitra');
+    }
+}
 
