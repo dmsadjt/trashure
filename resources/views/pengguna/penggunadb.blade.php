@@ -1,4 +1,4 @@
-@extends('layout.navbar-pengguna')
+@extends('layout.layout')
 @section('konten')
 
 

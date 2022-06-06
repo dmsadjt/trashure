@@ -36,9 +36,13 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
+
                     <div class="card">
+                    {{ csrf_field() }}
                         <div class="card-body" style="display: inline-block">
-                            <h3>Alamat </h3>
+                            <h3>
+                                {{$pesanans->alamat_pengguna}}
+                            </h3>
                             <br>
 
                             <p>RafzNgganteng@gemesl.com</p>

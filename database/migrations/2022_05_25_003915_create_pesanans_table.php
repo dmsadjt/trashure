@@ -15,16 +15,13 @@ class CreatePesanansTable extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //foreign key id pengguna
-            $table->unsignedBigInteger('id_pengguna')->nullable();
-            //foreign key id mitra
-            $table->unsignedBigInteger('id_mitra')->nullable();
-            //foreign key id bank sampah
-            $table->unsignedBigInteger('id_banks')->nullable();
+            $table->unsignedBigInteger('id_pengguna')->nullable();//foreign id pengguna
+            $table->unsignedBigInteger('id_mitra')->nullable();//foreign id mitra
+            $table->unsignedBigInteger('id_banks')->nullable();//foreign id bank
             $table->string('jenis_sampah');
             $table->integer('volume');
-            $table->date('waktu_pemesanan');
-            $table->string('status_pesanan');
+            $table->date('waktu_pemesanan')->useCurrent();
+            $table->string('status_pesanan')->default('Dalam pencarian driver');
             $table->integer('opsi_pembayaran');
             $table->string('alamat_pengguna');
 
