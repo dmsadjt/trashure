@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DBPenggunaController;
+use App\Http\Controllers\Mitra\DBMitraController;
 
 //Auth
 Route::get('/', function () {
@@ -54,10 +55,8 @@ Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPenggu
 Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData');
 Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit');
 Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
-
 Route::post('/admin/pengguna/storePengguna','DBPenggunaController@storePengguna');
 
-route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewPengguna');
 
 Route::post('/admin/informasi/store','DBInformasiController@store');
 Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahData');
@@ -65,6 +64,10 @@ Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@na
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
 Route::get('/admin/banksampah/overview', 'Banksampah\BanksampahController@overviewData');//Muhammad Dimas Adijanto - 5026201138
+
+
+Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
+Route::get('/admin/mitra/adddatamitra', 'Mitra\DBMitraController@tambahDataMitra');
 
 //Pengguna
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');

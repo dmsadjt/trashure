@@ -31,6 +31,14 @@ class AdminController extends Controller
         return view('admin.overviewDPengguna', ['pengguna'=>$pengguna]);
     }
 
+    public function overviewMitra()
+    {
+
+        $mitra = User::where('role_id', 3)->get();
+
+        return view('admin.overviewDMitra', ['mitra'=>$mitra]);
+
+    }
 
     public function dataRoles(){
         $roles = DB::Table('roles')
@@ -38,6 +46,14 @@ class AdminController extends Controller
                         ->paginate(5);
 
         return view('admin.overviewDPengguna', ['roles' => $roles]);
+    }
+
+    public function dataRoles2(){
+        $roles2 = DB::Table('roles')
+                        ->orderBy('id')
+                        ->paginate(5);
+
+        return view('admin.overviewDMitra', ['roles' => $roles2]);
     }
     public function create()
     {
