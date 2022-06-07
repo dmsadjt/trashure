@@ -48,7 +48,7 @@ nav {
           <a class="nav-link text-light" aria-current="page" href="/pengguna/pesananpengguna">Pesan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="/informasi">Informasi</a>
+          <a class="nav-link text-light" href="/pengguna/informasi">Informasi</a>
         </li>
         <li class="dropdown-center">
           <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
