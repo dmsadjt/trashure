@@ -37,7 +37,7 @@
             font-style: normal;
             font-weight: 700;
             font-size: 30px;
-            margin-top: 0.7em;
+            margin-top: 0.5em;
         }
 
         .driver {
@@ -72,12 +72,15 @@
 
             color: #000000;
         }
+        .text-center {
+            margin-top: 20px;
+        }
     </style>
 
     <body>
 
         <div class="container">
-            <div class="row mb-5 mt-5">
+            <div class="row mb-2 mt-5">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="card">
@@ -86,8 +89,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" data-bs-toggle="tab" href="#history"><b>History</b></a>
                                 </li>
-                                <li class="nav-item" id="nav2">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
                                 </li>
                                 <li class="nav-item" id="nav3">
                                     <a class="nav-link" data-bs-toggle="tab" href="#available"><b>Available</b></a>
@@ -125,67 +128,94 @@
 
 
                     <div id="ongoing" class="container tab-pane fade"><br>
-                        <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
-                            <div class="bg-primary">
-                                <div style="width:100%;height:4rem;"></div>
-                                @foreach ($pesanan_ongoing as $p)
-                                    <div class="card-body bg-danger">
-                                        <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                            class="float-start">
-                                        <div class="text">
-                                            <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                            <div>
-                                                <h5>{{ $p->jenis_sampah }}</h5>
-                                            </div>
-                                            <div>
-                                                <h5>{{ $p->volume }} kg</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form action="/mitra/pesanan/ambilPesanan/" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $p->id }}">
-                                            <input type="submit" value="Ambil Pesanan">
-                                        </form>
-                                    </div>
-                                @endforeach
 
+                        <div class="row  mt-2">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="card-body pl-3" style="display: inline-block">
+                                        <p class= "text-center">
+                                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+                                                aria-expanded="false" aria-controls="multiCollapseExample1">Ambil Pesanan</a>
+                                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                                                aria-controls="multiCollapseExample2">Selesaikan Pesanan</button>
+                                                <div class="col-sm-3"></div>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="bg-danger">
-                                <div style="width:100%;height:4rem;"></div>
-                                @foreach ($pesanan_finish as $p)
-                                    <div class="card-body">
-                                        <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                            class="float-start">
-                                        <div class="text">
-                                            <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                            <div>
-                                                <h5>{{ $p->jenis_sampah }}</h5>
-                                            </div>
-                                            <div>
-                                                <h5>{{ $p->volume }} kg</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form action="/mitra/pesanan/selesaikanPesanan/" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $p->id }}">
-                                            <input type="submit" value="Selesaikan Pesanan">
-                                        </form>
-                                    </div>
-                                @endforeach
-                            </div>
-
                         </div>
 
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class="card mt-3" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                                        <div class="">
+                                            <div style="width:100%;height:4rem;"></div>
+                                            @foreach ($pesanan_ongoing as $p)
+                                                <div class="card-body bg-danger">
+                                                    <img src="{{ url('/pemungut.png') }}" height="120" width="100"
+                                                        class="float-start">
+                                                    <div class="text">
+                                                        <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                                        <div>
+                                                            <h5>{{ $p->jenis_sampah }}</h5>
+                                                        </div>
+                                                        <div>
+                                                            <h5>{{ $p->volume }} kg</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <form action="/mitra/pesanan/ambilPesanan/" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="id" value="{{ $p->id }}">
+                                                        <input type="submit" value="Ambil Pesanan">
+                                                    </form>
+                                                </div>
+                                            @endforeach
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                        <div class="card mt-3" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                                            <div style="width:100%;height:4rem;"></div>
+                                            @foreach ($pesanan_finish as $p)
+                                                <div class="card-body">
+                                                    <img src="{{ url('/pemungut.png') }}" height="120" width="100"
+                                                        class="float-start">
+                                                    <div class="text">
+                                                        <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}
+                                                        </h3>
+                                                        <div>
+                                                            <h5>{{ $p->jenis_sampah }}</h5>
+                                                        </div>
+                                                        <div>
+                                                            <h5>{{ $p->volume }} kg</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <form action="/mitra/pesanan/selesaikanPesanan/" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="id" value="{{ $p->id }}">
+                                                        <input type="submit" value="Selesaikan Pesanan">
+                                                    </form>
+                                                </div>
+                                            @endforeach
+                                        </div>
 
-                        @foreach ($pesanan as $p)
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="available" class="container tab-pane fade"><br>
-                                <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                                @foreach ($pesanan as $p)
+                                <div class="card mt-2" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+
                                     <div class="card-body">
                                         <img src="{{ url('/pemungut.png') }}" height="120" width="100"
                                             class="float-start">
@@ -206,11 +236,12 @@
                                             <input type="submit" value="Terima Pesanan">
                                         </form>
                                     </div>
+
                                 </div>
-                        @endforeach
+                                @endforeach
 
                     </div>
-                </div>
+
             </div>
 
     </body>

@@ -1,6 +1,5 @@
-@extends('layouts.navbar-pengguna')
-
-@section('content')
+@extends('layout.layout')
+@section('konten')
     <style>
         .nav-tab>li {
             background-color: transparent !important;

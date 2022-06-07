@@ -1,6 +1,5 @@
-@extends('layouts.layout')
-@section('text1', 'Pesan')
-@section('text2', 'Informasi')
+@extends('layout.layout')
+@section('konten')
 
 <style>
     body {

@@ -1,8 +1,6 @@
-@extends('layouts.navbar-pengguna')
-@section('text1', 'Pesan')
-@section('text2', 'Informasi')
+@extends('layout.layout')
+@section('konten')
 
-@section('content')
     <style>
         img {
             margin-left: 100px;

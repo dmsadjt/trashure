@@ -1,7 +1,7 @@
-@extends('layouts.navbar-pengguna')
+@extends('layout.layout')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
-@section('content')
+@section('konten')
 
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
                 <p class="fw-normal" style="margin-bottom: 20px">welcome!</p>
                 <h2 class="mb-4 fw-semibold">Kenali sampah anda untuk menjaga<br> lingkungan anda.</h2>
                 <hr>
-                <a href="/informasi/list" class="btn fw-semibold mt-4">Start Now!</a>
+                <a href="/pengguna/informasi/list" class="btn fw-semibold mt-4">Start Now!</a>
             </div>
             <div class="col-9">
 
