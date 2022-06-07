@@ -63,7 +63,11 @@ Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahDat
 Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
-Route::get('/admin/banksampah/overview', 'Banksampah\BanksampahController@overviewData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/tampilkan', 'Banksampah\BanksampahController@tampilkan');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/tambahData', 'Banksampah\BanksampahController@tambahData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/editData/{id}', 'Banksampah\BanksampahController@editData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/hapusData/{id}', 'Banksampah\BanksampahController@hapusData');//Muhammad Dimas Adijanto - 5026201138
+Route::post('/admin/banksampah/postDataBankSampah', 'Banksampah\BanksampahController@postDataBankSampah');//Muhammad Dimas Adijanto - 5026201138
 
 
 Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
