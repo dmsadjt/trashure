@@ -41,32 +41,21 @@
             <p>{{ $banks->profile->alamat }}</p>
         </div>
     </div>
-    <div class="text-center">
-        <a class="mt-5 shadow-lg btn btn-danger" href="/mitra/pesanan/daftarpesanan">Kembali</a>
-        <button type="button" class="btn mt-5 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Selesaikan Pesanan
-        </button>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Selesaikan Pesanan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Apakah anda yakin ingin menyelesaikan pesanan?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                    <form action="/mitra/pesanan/selesaikanPesanan" method="POST">
-                        @csrf
-                        <input type="hidden" name="id" id="id" value="{{$pesanan->id}}">
-                        <input type="submit" value="Iya" class="btn btn-primary">
-                    </form>
-                </div>
+    <div class="d-flex justify-content-center text-center">
+
+        <form action="/mitra/pesanan/selesaikanPesanan" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="id" id="id" value="{{ $pesanan->id }}">
+            <input type="hidden" name="status_pesanan" id="status_pesanan" value="Pesanan selesai">
+            <div class="form-group mt-2">
+                <label for="bukti_selesai">Upload Bukti Penyelesaian Pesanan</label>
+                <input class="form-control " type="file" name="bukti_selesai" id="bukti_selesai">
             </div>
-        </div>
+            <a class="mt-5 shadow-lg btn btn-danger" href="/mitra/pesanan/daftarpesanan">Kembali</a>
+            <input type="submit" value="Selesaikan Pesanan" class="btn btn-primary mt-5">
+        </form>
+
+
     </div>
     </div>
 @endsection

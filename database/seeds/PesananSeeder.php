@@ -24,8 +24,6 @@ class PesananSeeder extends Seeder
             'alamat_pengguna' => 'Surabaya',
 
 
-
-
         ]);
     }
 }

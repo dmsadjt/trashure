@@ -90,6 +90,12 @@
         .text-center {
             margin-top: 20px;
         }
+
+        .img-pesanan{
+            width: 10em;
+            height: 10em;
+            object-fit: cover;
+        }
     </style>
 
     <body>
@@ -173,6 +179,7 @@
                                     <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
                                     <div>
                                         <h5>{{ $p->jenis_sampah }}</h5>
+
                                     </div>
                                     <div>
                                         <h5>{{ $p->volume }} kg</h5>
@@ -194,14 +201,18 @@
                 @foreach ($pesanan_done as $p)
                     <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
                         <div class="card-body">
-                            <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
-                            <div class="text">
-                                <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                <div>
-                                    <h5>{{ $p->jenis_sampah }}</h5>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
                                 </div>
-                                <div>
+                                <div class="col-6">
+                                    <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                    <h5>{{ $p->jenis_sampah }}</h5>
                                     <h5>{{ $p->volume }} kg</h5>
+                                </div>
+                                <div class="col-4">
+                                    <h5>Bukti Penyetoran</h5>
+                                    <img class="img-pesanan border shadow" src="/bukti_selesai/{{$p->bukti_selesai}}" alt="gambar">
                                 </div>
                             </div>
                         </div>

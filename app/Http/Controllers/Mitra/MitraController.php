@@ -85,14 +85,25 @@ class MitraController extends Controller
 
     public function selesaikanPesanan(Request $request){
 
-        $user = auth()->user();
 
-        DB::table('pesanans')->where('id', $request->id)
+        if ($files = $request->file('bukti_selesai')) {
+                // Define upload path
+                $destinationPath = public_path('/bukti_selesai/'); // upload path
+                // Upload Orginal Image
+                $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+                $files->move($destinationPath, $profileImage);
+                $insert['image'] = "$profileImage";
+
+                DB::table('pesanans')->where('id', $request->id)
                 ->update([
                     'status_pesanan'=>'Pesanan selesai',
+                    'bukti_selesai'=>"$profileImage",
                 ]);
 
+        }
+
         $pesanan = Pesanan::where('id', $request->id)->get();
+
         return redirect('/mitra/pesanan/daftarpesanan');
     }
 
