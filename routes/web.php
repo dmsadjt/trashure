@@ -41,7 +41,7 @@ Route::group(['as' => 'pengguna.', 'prefix' => 'pengguna', 'namespace' => 'Pengg
 });
 
 Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'middleware' => ['auth', 'mitra']], function () {
-    Route::get('dashboard', 'DashboardController@index');
+    Route::get('dashboard', 'MitraController@index');
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
@@ -93,6 +93,9 @@ Route::get('/mitra/pesanan/terima/id', 'Pesanan\PesananController@detailPesanan'
 Route::get('/mitra/pesanan/ambil/id', 'Pesanan\PesananController@ambilPesanan'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/mitra/pesanan/selesaikan/id', 'Pesanan\PesananController@selesaikanPesanan'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/mitra/pesanan/daftarpesanan', 'Mitra\MitraController@daftarpesanan');
+Route::post('/mitra/pesanan/terimaPesanan', 'Mitra\MitraController@terimaPesanan');//Muhammad Dimas Adijato - 5026201138
+Route::post('/mitra/pesanan/ambilPesanan', 'Mitra\MitraController@ambilPesanan');//Muhammad Dimas Adijato - 5026201138
+Route::post('/mitra/pesanan/selesaikanPesanan', 'Mitra\MitraController@selesaikanPesanan');//Muhammad Dimas Adijato - 5026201138
 
 //Bank Sampah
 Route::get('/banksampah/daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');

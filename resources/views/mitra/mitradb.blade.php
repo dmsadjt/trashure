@@ -78,7 +78,7 @@
           <div class="card">
             <img src="{{url('/truksampah.png')}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a href="{{ url('daftarpesananmitra') }}" class="text-dark">
+              <a href="{{ url('/mitra/pesanan/daftarpesanan') }}" class="text-dark">
                 <h5 class="card-title text-center fw-bold">Order List</h5>
                 <p class="card-text"></p>
               </a>

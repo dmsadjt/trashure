@@ -12,7 +12,20 @@ use Illuminate\Support\Facades\DB;
 class PenggunaController extends Controller
 {
     public function daftarpesananpengguna() {
-        return view("pengguna.daftarpesananpengguna");
+        $pesanan = Pesanan::where('id_pengguna',auth()->user()->id)->get();
+
+        $join = DB::table('pesanans')
+                        ->join('users','users.id','=','pesanans.id_banks')
+                        ->get();
+
+        $join_mitra = DB::table('pesanans')
+                        ->join('users','users.id','=','pesanans.id_mitra')
+                        ->join('profils','profils.user_id','=','pesanans.id_mitra')
+                        ->get();
+
+
+
+        return view("pengguna.daftarpesananpengguna", compact('join','join_mitra'));
     }
 
     public function pesanpengguna() {
@@ -21,7 +34,7 @@ class PenggunaController extends Controller
 
     public function pilihAlamat(Request $request){
         $pesanan = $request->session()->get('pesanan');
-        $banks = User::where('role_id', 4)->get();
+        $banks = User::where('role_id',4)->get();
 
         return view('pengguna.pilih_alamat',compact('pesanan','banks'));
     }
