@@ -25,8 +25,40 @@ class MitraController extends Controller
         return view('mitra.daftarpesananmitra', compact('pesanan','pesanan_ongoing','pesanan_finish','pesanan_done'));
     }
 
-    public function terimaPesanan(Request $request){
+    public function detailPesanan($id){
+        $pesanan = Pesanan::where('id',$id)->first();
 
+        $banks = User::where('id',$pesanan->id_banks)->first();
+
+        $pengguna = User::where('id',$pesanan->id_pengguna)->first();
+
+
+        return view('mitra.detail-pesanan',compact('pesanan','banks','pengguna'));
+    }
+
+    public function detailAmbilPesanan($id){
+        $pesanan = Pesanan::where('id',$id)->first();
+
+        $banks = User::where('id',$pesanan->id_banks)->first();
+
+        $pengguna = User::where('id',$pesanan->id_pengguna)->first();
+
+
+        return view('mitra.ambil-pesanan',compact('pesanan','banks','pengguna'));
+    }
+
+    public function detailSelesaikanPesanan($id){
+        $pesanan = Pesanan::where('id',$id)->first();
+
+        $banks = User::where('id',$pesanan->id_banks)->first();
+
+        $pengguna = User::where('id',$pesanan->id_pengguna)->first();
+
+
+        return view('mitra.selesaikan-pesanan',compact('pesanan','banks','pengguna'));
+    }
+
+    public function terimaPesanan(Request $request){
         $user = auth()->user();
 
         DB::table('pesanans')->where('id', $request->id)

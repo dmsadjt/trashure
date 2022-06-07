@@ -17,6 +17,20 @@
             background-color: #2bff00;
         }
 
+        .pane {
+            background-color: #2bff00 !important;
+            color: #000000;
+        }
+
+        .pane.active {
+            background-color: #2da31d !important;
+        }
+
+        .pane:hover {
+            color: white;
+            background-color: #2da31d !important;
+        }
+
         .a {
             float: right;
             margin-right: 120px;
@@ -72,177 +86,131 @@
 
             color: #000000;
         }
+
         .text-center {
             margin-top: 20px;
         }
     </style>
 
     <body>
-
-        <div class="container">
-            <div class="row mb-2 mt-5">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <ul class="nav nav-tab nav-justified " role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#history"><b>History</b></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
-                                </li>
-                                <li class="nav-item" id="nav3">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#available"><b>Available</b></a>
-                                </li>
-                            </ul>
+        <ul class="nav nav-pills gap-3 border p-4 d-flex justify-content-center my-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link pane active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#available"
+                    type="button" role="tab" aria-controls="available" aria-selected="true">Available</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link pane" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#ongoing"
+                    type="button" role="tab" aria-controls="ongoing" aria-selected="false">Ongoing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link pane" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#history"
+                    type="button" role="tab" aria-controls="history" aria-selected="false">History</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="available" role="tabpanel" aria-labelledby="available-tab"
+                tabindex="0">
+                <div class="d-flex justify-content-center">
+                    <h2>Pesanan Tersedia</h2>
+                </div>
+                @foreach ($pesanan as $p)
+                    <div class="card mt-2" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                        <div class="card-body">
+                            <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
+                            <div class="text">
+                                <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                <div>
+                                    <h5>{{ $p->jenis_sampah }}</h5>
+                                </div>
+                                <div>
+                                    <h5>{{ $p->volume }} kg</h5>
+                                </div>
+                            </div>
                         </div>
+                        <div class="d-flex justify-content-center my-3">
+                            <a href="/mitra/pesanan/detailpesanan/{{ $p->id }}" class="btn btn-primary">Detail
+                                Pesanan</a>
+                        </div>
+
                     </div>
+                @endforeach
+            </div>
+            <div class="tab-pane fade" id="ongoing" role="tabpanel" aria-labelledby="ongoing-tab" tabindex="0">
+                <div class="d-flex justify-content-center border">
+                    <h3>Ambil Pesanan</h3>
+                </div>
+                <div>
+                    @foreach ($pesanan_ongoing as $p)
+                        <div class="card mt-2" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body ">
+                                <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
+                                <div class="text">
+                                    <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                    <div>
+                                        <h5>{{ $p->jenis_sampah }}</h5>
+                                    </div>
+                                    <div>
+                                        <h5>{{ $p->volume }} kg</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center my-3">
+                                <a href="/mitra/pesanan/detailAmbilPesanan/{{ $p->id }}" class="btn btn-primary">Ambil
+                                    Pesanan</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="d-flex justify-content-center border mt-3">
+                    <h3>Selesaikan Pesanan</h3>
+                </div>
+                <div>
+                    @foreach ($pesanan_finish as $p)
+                        <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body">
+                                <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
+                                <div class="text">
+                                    <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                    <div>
+                                        <h5>{{ $p->jenis_sampah }}</h5>
+                                    </div>
+                                    <div>
+                                        <h5>{{ $p->volume }} kg</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center my-3">
+                                <a href="/mitra/pesanan/detailSelesaikanPesanan/{{ $p->id }}" class="btn btn-primary">Selesaikan
+                                    Pesanan</a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-
-
-
-            <div class="row">
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div id="history" class="container tab-pane active"><br>
-                        <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
-                            @foreach ($pesanan_done as $p)
-                                    <div class="card-body bg-danger">
-                                        <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                            class="float-start">
-                                        <div class="text">
-                                            <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                            <div>
-                                                <h5>{{ $p->jenis_sampah }}</h5>
-                                            </div>
-                                            <div>
-                                                <h5>{{ $p->volume }} kg</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                        </div>
-                    </div>
-
-
-                    <div id="ongoing" class="container tab-pane fade"><br>
-
-                        <div class="row  mt-2">
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-4">
-                                <div class="card">
-                                    <div class="card-body pl-3" style="display: inline-block">
-                                        <p class= "text-center">
-                                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-                                                aria-expanded="false" aria-controls="multiCollapseExample1">Ambil Pesanan</a>
-                                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
-                                                aria-controls="multiCollapseExample2">Selesaikan Pesanan</button>
-                                                <div class="col-sm-3"></div>
-                                        </p>
-                                    </div>
+            <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab" tabindex="0">
+                <div class="d-flex justify-content-center">
+                    <h2>Riwayat Pesanan</h2>
+                </div>
+                @foreach ($pesanan_done as $p)
+                    <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                        <div class="card-body">
+                            <img src="{{ url('/pemungut.png') }}" height="120" width="100" class="float-start">
+                            <div class="text">
+                                <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
+                                <div>
+                                    <h5>{{ $p->jenis_sampah }}</h5>
+                                </div>
+                                <div>
+                                    <h5>{{ $p->volume }} kg</h5>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                    <div class="card mt-3" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
-                                        <div class="">
-                                            <div style="width:100%;height:4rem;"></div>
-                                            @foreach ($pesanan_ongoing as $p)
-                                                <div class="card-body bg-danger">
-                                                    <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                                        class="float-start">
-                                                    <div class="text">
-                                                        <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                                        <div>
-                                                            <h5>{{ $p->jenis_sampah }}</h5>
-                                                        </div>
-                                                        <div>
-                                                            <h5>{{ $p->volume }} kg</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <form action="/mitra/pesanan/ambilPesanan/" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{ $p->id }}">
-                                                        <input type="submit" value="Ambil Pesanan">
-                                                    </form>
-                                                </div>
-                                            @endforeach
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                        <div class="card mt-3" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
-                                            <div style="width:100%;height:4rem;"></div>
-                                            @foreach ($pesanan_finish as $p)
-                                                <div class="card-body">
-                                                    <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                                        class="float-start">
-                                                    <div class="text">
-                                                        <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}
-                                                        </h3>
-                                                        <div>
-                                                            <h5>{{ $p->jenis_sampah }}</h5>
-                                                        </div>
-                                                        <div>
-                                                            <h5>{{ $p->volume }} kg</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <form action="/mitra/pesanan/selesaikanPesanan/" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{ $p->id }}">
-                                                        <input type="submit" value="Selesaikan Pesanan">
-                                                    </form>
-                                                </div>
-                                            @endforeach
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="available" class="container tab-pane fade"><br>
-                                @foreach ($pesanan as $p)
-                                <div class="card mt-2" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
-
-                                    <div class="card-body">
-                                        <img src="{{ url('/pemungut.png') }}" height="120" width="100"
-                                            class="float-start">
-                                        <div class="text">
-                                            <h3>{{ $p->status_pesanan }} <br>{{ $p->waktu_pemesanan }}</h3>
-                                            <div>
-                                                <h5>{{ $p->jenis_sampah }}</h5>
-                                            </div>
-                                            <div>
-                                                <h5>{{ $p->volume }} kg</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        <form action="/mitra/pesanan/terimaPesanan/" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $p->id }}">
-                                            <input type="submit" value="Terima Pesanan">
-                                        </form>
-                                    </div>
-
-                                </div>
-                                @endforeach
-
                     </div>
-
+                @endforeach
             </div>
+        </div>
+
+
 
     </body>
 @endsection
