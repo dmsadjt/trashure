@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('konten')
-@section('content')
+
     <style>
         img {
             margin-left: 30px;
@@ -39,12 +39,13 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
                     <div class="card">
+                        {{ csrf_field() }}
                         <div class="card-body" style="display: inline-block">
                             <div class="row align-item-center">
                                 <div class="col-sm-5"><img src="{{ url('/image/poins.png') }}" class="rounded"
                                         alt="" width="150"></div><br>
                                 <div class="col-sm-7">
-                                    <h3><b>0 Poin<b>
+                                    <h3><b>{{ $users->profile->poin }} Poin<b>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +71,7 @@
                     <div class="card-body" style="display: inline-block">
                         <h4>Juni 2022 </h4>
                         <br>
-                        <p>Top Up Credit 50000 <span>+ 5 Point</span>
+                        <p>Top Up Credit {{ $users->profile->poin }} <span>+ 5 Point</span>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,6 @@ class DBPenggunaController extends Controller
             'no_telepon' => $request->no_telepon,
             'no_rekening' => $request->no_rekening,
         ]);
-
         // alihkan halaman ke halaman pengguna
         return redirect('/admin/pengguna/overviewdata');
     }
@@ -68,12 +67,4 @@ public function hapus($id)
     }
 }
 
-
-// CONTROLLER MITRA
-
-class DBMitraController extends Controller {
-    public function overviewMitra(){
-        return view('admin.overviewDMitra');
-    }
-}
 

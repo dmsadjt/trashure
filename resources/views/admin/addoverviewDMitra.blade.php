@@ -34,7 +34,7 @@
             </nav>
 
 
-            <form action="/storePengguna" method="post">
+            <form action="/admin/mitra/storeMitra" method="post">
                 {{ csrf_field() }}
                 <div>
 
@@ -53,6 +53,8 @@
                         Password <input class="form-control" name="password" required="required"> <br />
                         Phone number <input class="form-control" name="no_telepon" required="required"> <br />
                         Nomor rekening <input class="form-control" name="no_rekening" required="required"> <br />
+                        Kendaraan <input class="form-control" name="kendaraan" required="required"> <br />
+                        plat_kendaraan <input class="form-control" name="plat_kendaraan" required="required"> <br />
                     </div>
                 </div>
 
@@ -61,7 +63,7 @@
     </body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid justify-content-end">
-            <a href="/admin/pengguna/overviewdata">
+            <a href="/admin/mitra/overviewdata">
             <button class="btn btn-outline-success" type="button" style="margin: 10px">Cancel</button>
             </a>
             <input type="submit" value="Add customer" class="btn btn-success">

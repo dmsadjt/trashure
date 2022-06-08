@@ -134,7 +134,7 @@
       <p class="fw-normal" style="margin-bottom: 20px">TRASHURE</p>
       <h2 class="mb-4 fw-semibold">Tak perlu bingung <br>dengan sampah<br>di lingkungan anda</h2>
       <hr>
-      <a href="#" class="btn fw-semibold mt-4">Start Now!</a>
+      <a href="/pengguna/pesananpengguna" class="btn fw-semibold mt-4">Start Now!</a>
     </div>
     <div class="col-8 d-flex justify-content-end">
       <img src="{{url('/orangduduk.png')}}" alt="orang duduk" style="width: 300px;">
@@ -153,7 +153,7 @@
       <div class="card">
         <img src="{{url('/truksampah.png')}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title text-center fw-bold">Trash Pickup</h5>
+            <h5 class="card-title text-center fw-bold" href="/pengguna/pesananpengguna">Trash Pickup</h5>
                 <p class="card-text"></p>
         </div>
       </div>
@@ -162,7 +162,7 @@
       <div class="card">
         <img src="{{url('/truksampah.png')}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title text-center fw-bold">Trash Pickup</h5>
+            <h5 class="card-title text-center fw-bold" ><a href="/pengguna/pesananpengguna">Trash Pickup <a></h5>
           <p class="card-text"></p>
         </div>
       </div>

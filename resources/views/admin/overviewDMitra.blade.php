@@ -67,6 +67,8 @@
                     {{-- <th>PASSWORD</th> --}}
                     <th>PHONE NUMBER</th>
                     <th>NOMOR REKENING</th>
+                    <th>KENDARAAN</th>
+                    <th>PLAT KENDARAAN</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -81,6 +83,8 @@
                         {{-- <td>{{ $p->password }}</td> --}}
                         <td>{{ $m->profile->no_telepon }}</td>
                         <td>{{ $m->profile->no_rekening }}</td>
+                        <td>{{$m->profile->kendaraan}}</td>
+                        <td>{{$m->profile->plat_kendaraan}}</td>
 
                         <td>
                             <a href="/admin/mitra/editdatamitra/{{ $m->id }}">

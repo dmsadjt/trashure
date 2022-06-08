@@ -81,7 +81,6 @@
                         {{-- <td>{{ $p->password }}</td> --}}
                         <td>{{ $p->profile->no_telepon }}</td>
                         <td>{{ $p->profile->no_rekening }}</td>
-
                         <td>
                             <a href="/admin/pengguna/editdatapengguna/{{ $p->id }}">
                                 <input type="button" id="editButton" value="edit">

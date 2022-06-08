@@ -30,10 +30,10 @@
     </style>
 
     <body>
-
+<div class="container">
         <div class="container-fluid pb-4 mt-2">
             <div class="row">
-                <div class="col-sm-3"><img src="{{ url('/image/pengguna/sampah.png') }}" class="rounded" alt=""
+                <div class="col-sm-3 mt-3"><img src="{{ url('/image/pengguna/sampah.png') }}" class="rounded" alt=""
                         width="275"></div><br>
                 <div class="col-sm-8">
                     <h3><b>Get Your Trash Picked Up Here and Don't Forget To Choose Trash Type and Set The Location!<b>
@@ -87,7 +87,7 @@
                     <button type="submit" class="btn btn-primary ">Submit</button>
                 </div>
             </div>
-
+        </div>
         </form>
 
 
