@@ -82,7 +82,7 @@ Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra')
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
-Route::get('/pengguna/poin', 'Pengguna\PoinController@poin');
+Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin');
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
 Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran');
