@@ -1,4 +1,4 @@
-@extends('layouts.layoutDPengguna')
+@extends('layouts.navbar-admin')
 @section('content')
     <!DOCTYPE html>
     <html lang="en">
