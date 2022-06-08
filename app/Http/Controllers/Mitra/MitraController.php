@@ -100,6 +100,7 @@ class MitraController extends Controller
         ]);
 
         return redirect('/admin/mitra/overviewdata');
+    }
     public function detailPesanan($id){
         $pesanan = Pesanan::where('id',$id)->first();
 

@@ -41,16 +41,16 @@
             <br>
 
 
-            <form action="/admin/informasi/postInformasi" method="post">
+            <form action="/admin/informasi/postInformasi" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div>
                     <div class="form-group">
                         <label for="judul">Judul</label>
                         <input class="form-control" type="text" name="judul" id="judul" required="required"> <br />
                         <label for="informasi">Informasi</label>
-                        <textarea class="form-control" type="text" name="informasi" required="required"> </textarea> <br />
+                        <textarea class="form-control" type="text" name="informasi" id="gambar" required="required"> </textarea> <br />
                         <label for="gambar">Upload Gambar</label>
-                        <input class="form-control" type="file" name="gambar" required="required"> <br />
+                        <input class="form-control" type="file" name="gambar" id="gambar" required="required"> <br />
                     </div>
                 </div>
 

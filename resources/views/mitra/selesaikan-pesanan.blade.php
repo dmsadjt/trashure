@@ -43,7 +43,7 @@
     </div>
     <div class="d-flex justify-content-center text-center">
 
-        <form action="/mitra/pesanan/selesaikanPesanan" method="POST" enctype="multipart/form-data">
+        <form action="/mitra/pesanan/selesaikanPesanan" method="POST" enctype="multipart/form-data"\>
             @csrf
             <input type="hidden" name="id" id="id" value="{{ $pesanan->id }}">
             <input type="hidden" name="status_pesanan" id="status_pesanan" value="Pesanan selesai">

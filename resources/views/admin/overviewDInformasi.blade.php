@@ -13,6 +13,10 @@
         <div class="col">
             <button type="button" class="btn btn-primary">Cari</button>
         </div>
+
+    </div>
+    <div class="mt-3 d-flex align-content-end">
+        <a href="/admin/informasi/nambahinformasi" class="btn btn-primary">  Informasi</a>
     </div>
     <br>
     <table class="table table-bordered table-striped">
