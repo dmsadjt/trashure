@@ -50,6 +50,9 @@ nav {
         <li class="nav-item">
           <a class="nav-link text-light" href="/pengguna/informasi">Informasi</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/pengguna/poin">Point</a>
+        </li>
         <li class="dropdown-center">
           <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="iconify" data-icon="ic:round-account-circle"></span>
