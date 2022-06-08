@@ -18,7 +18,7 @@ class InformasiSampah extends Migration
             $table->string('judul');
             $table->string('informasi');
             $table->string('gambar');
-            $table->date('tanggal_pembuatan');
+            $table->datetime('tanggal_pembuatan')->useCurrent();
             $table->timestamps();
         });
     }

@@ -58,9 +58,9 @@ Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus'
 Route::post('/admin/pengguna/storePengguna','DBPenggunaController@storePengguna');
 
 
-Route::post('/admin/informasi/store','DBInformasiController@store');
 Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::post('/admin/informasi/postInformasi', 'Informasi\InformasiController@postInformasi');
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
 Route::get('/admin/banksampah/tampilkan', 'Banksampah\BanksampahController@tampilkan');//Muhammad Dimas Adijanto - 5026201138
