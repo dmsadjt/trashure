@@ -34,7 +34,7 @@
             </nav>
 
 
-            <form action="/storePengguna" method="post">
+            <form action="/admin/pengguna/storePengguna" method="post">
                 {{ csrf_field() }}
                 <div>
 

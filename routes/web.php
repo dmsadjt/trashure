@@ -67,7 +67,11 @@ Route::get('/admin/banksampah/overview', 'Banksampah\BanksampahController@overvi
 
 
 Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
-Route::get('/admin/mitra/adddatamitra', 'Mitra\DBMitraController@tambahDataMitra');
+Route::get('/admin/mitra/adddatamitra', 'Mitra\MitraController@tambahDataMitra');
+Route::post('/admin/mitra/storeMitra', 'Mitra\MitraCOntroller@storeMitra');
+Route::get('/admin/mitra/hapusdatamitra/{id}', 'Mitra\MitraController@hapusMitra');
+Route::get('/admin/mitra/editdatamitra/{id}', 'Mitra\MitraController@editMitra');
+Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra');
 
 //Pengguna
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');
