@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+body {
+    font-family: 'Montserrat'
+}
+
+h1 {
+    font-weight: 700;
+}
 
 .content--notification {
     margin: 2em;
@@ -70,4 +77,8 @@ nav {
     color: white;
     width: fit-content;
     border-radius: 10px;
+}
+
+.tombol {
+    margin-top: 150px;
 }

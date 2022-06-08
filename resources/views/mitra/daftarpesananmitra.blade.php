@@ -85,7 +85,7 @@ table {
                                     <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Ongoing</b></a>
                                 </li>
                                 <li class="nav-item" id="nav2">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#ongoing"><b>Available</b></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#available"><b>Available</b></a>
                                 </li>
                             </ul>
                         </div>
@@ -146,6 +146,31 @@ table {
 
 
                     </div>
+
+                    <div id="available" class="container tab-pane active"><br>
+                        <div class="card" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body">
+                                <img src="{{url('/Delivery.png')}}"  height="120" width="100" class="float-start">
+                                <div class="text d-flex justify-content-around">
+                                    <h3>Perumahan Kuvukiland <br>65211 <br>Mulyosari </h3>
+                                    <h3>3,4 KM </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="card">
+                            <div class="card-body" style="box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);">
+                                <img src="{{url('/Delivery.png')}}"  height="120" width="100" class="float-start">
+                                <div class="text d-flex justify-content-around">
+                                    <h3>Perumahan Sutorejo <br>60532 <br>Mulyosari </h3>
+                                    <h3>3,7 KM </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
     </div>
 </div>
