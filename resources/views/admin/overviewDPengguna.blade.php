@@ -28,7 +28,6 @@
             right: 0;
             margin-right: 10px
         }
-
     </style>
 
     <body>
@@ -67,7 +66,8 @@
                     {{-- <th>PASSWORD</th> --}}
                     <th>PHONE NUMBER</th>
                     <th>NOMOR REKENING</th>
-                    <th>ACTION</th>
+                    <th>EDIT</th>
+                    <th>HAPUS</th>
                 </tr>
             </thead>
             <tbody>
@@ -82,12 +82,10 @@
                         <td>{{ $p->profile->no_telepon }}</td>
                         <td>{{ $p->profile->no_rekening }}</td>
                         <td>
-                            <a href="/admin/pengguna/editdatapengguna/{{ $p->id }}">
-                                <input type="button" id="editButton" value="edit">
-                            </a>
-                            <a href="/admin/pengguna/hapusdatapengguna/{{ $p->id }}">
-                                <input type="button" id="deleteButton" value="delete">
-                            </a>
+                            <a href="/admin/pengguna/editdatapengguna/{{ $p->id }}">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/admin/pengguna/hapusdatapengguna/{{ $p->id }}">Delete</a>
 
                         </td>
                     </tr>

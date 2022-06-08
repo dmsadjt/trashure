@@ -69,7 +69,8 @@
                     <th>NOMOR REKENING</th>
                     <th>KENDARAAN</th>
                     <th>PLAT KENDARAAN</th>
-                    <th>ACTION</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -87,13 +88,10 @@
                         <td>{{$m->profile->plat_kendaraan}}</td>
 
                         <td>
-                            <a href="/admin/mitra/editdatamitra/{{ $m->id }}">
-                                <input type="button" id="editButton" value="edit">
-                            </a>
-                            <a href="/admin/mitra/hapusdatamitra/{{ $m->id }}">
-                                <input type="button" id="deleteButton" value="delete">
-                            </a>
-
+                            <a href="/admin/mitra/editdatamitra/{{ $m->id }}">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/admin/mitra/hapusdatamitra/{{ $m->id }}">Delete</a>
                         </td>
                     </tr>
                 @endforeach
