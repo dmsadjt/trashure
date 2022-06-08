@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-@section('content')
+@extends('layout.layout')
+@section('konten')
     <div class="row text-center m-5 ">
         <h1>Your Driver has been Found!</h1>
     </div>

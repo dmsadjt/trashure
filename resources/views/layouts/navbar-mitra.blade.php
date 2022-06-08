@@ -30,10 +30,10 @@
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg text-light">
         <div class="container">
-            <a class="navbar-brand fw-bold text-light" href="/home">TRASHURE</a>
+            <a class="navbar-brand fw-bold text-light" href="{{ url('/mitra/dashboard') }}">TRASHURE</a>
             <ul class="navbar-nav justify-content-end align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Pesanan</a>
+                    <a class="nav-link text-light" href="/mitra/pesanan/daftarpesanan">Pesanan</a>
                 </li>
                 <li class="dropdown-center">
                     <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"

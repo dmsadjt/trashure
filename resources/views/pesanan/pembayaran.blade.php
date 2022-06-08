@@ -1,8 +1,8 @@
-@extends('layouts.navbar-pengguna')
+@extends('layout.layout')
 @section('text1', 'Pesan')
 @section('text2', 'Informasi')
 
-@section('content')
+@section('konten')
     <style>
         img {
             margin-left: 20px;
@@ -27,82 +27,86 @@
         u {
             float: right;
         }
-
     </style>
 
     <body>
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+        <div class="container ">
+            <form action="/pengguna/pesan/postPembayaran" method="POST">
+                <div class="row mt-5">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card">
+                            {{ csrf_field() }}
+                            <div class="card-body" style="display: inline-block">
+                                <h3>
+                                    {{ $pesanan->alamat_pengguna }}
+                                </h3>
 
-                    <div class="card">
-                    {{ csrf_field() }}
-                        <div class="card-body" style="display: inline-block">
-                            <h3>
-                                {{$pesanans->alamat_pengguna}}
-                            </h3>
-                            <br>
 
-                            <p>RafzNgganteng@gemesl.com</p>
+                                <p>{{ $user->email }}</p>
 
-                                <br>
-                            <p><u>Edit Profile</u></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
 
-            <br>
-
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <h3>Pembayaran </h3>
-                            <br>
-                            <img src="{{ URL::asset('/image/credit.png') }}" alt="biaya Pic" height="50"
-                                width="50">
-                            <h4>Cash</h4>
-                            <p>
-                            <p><u>Ganti Pembayaran</u></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
-
-            <br>
-
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <h3>Jenis Sampah <span>Organik</span> </h3>
-
+                                <p><u>Edit Profile</u></p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
 
-            </div>
 
-            <br>
-
-            <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body" style="display: inline-block">
-                            <h3>Total Tagihan <span>60.000</span> </h3>
+                <div class="row mt-3">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="card-body" style="display: inline-block">
+                                <h3>Pembayaran</h3>
+                                <select class="form-select" name="opsi_pembayaran" id="opsi_pembayaran">
+                                    @foreach ($opsi as $o)
+                                        <option value="{{$o->pembayaran_id}}">{{$o->jenis_pembayaran}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
+
+
+
+                <div class="row mt-3">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="card-body" style="display: inline-block">
+                                <h3>Jenis Sampah <span>Organik</span> </h3>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-3">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="card-body" style="display: inline-block">
+                                <h3>Total Tagihan <span>60.000</span> </h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+                <div class="row mt-5">
+                    <div class="col d-grid mx-auto">
+                        <input type="submit" class="btn btn-lg btn-success mx-auto" value="Submit">
+                    </div>
+                </div>
+
+            </form>
+
 
             </div>
     </body>
