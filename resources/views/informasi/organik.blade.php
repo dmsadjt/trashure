@@ -52,57 +52,20 @@
 
         </style>
 
-        {{-- <div class="container">
-            $@foreach ($informasi as $i)
+        <div class="container">
+            @foreach ($informasi as $i)
                 <div class="row align-items-center justify-content-center">
-                    <img src="{{$i->gambar}}" alt="" class="informasi mt-5">
+                    <img src="/gambar/{{$i->gambar}}" alt="gambar-informasi" class="informasi text-center rounded shadow mt-5 bg-secondary">
                     <h2 class="mt-5">{{$i->judul}}</h2>
                     <p class="mt-5">
                         {{$i->informasi}}
-                    </p>s
+                    </p>
                 </div>
             @endforeach
 
-        </div> --}}
-
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <img src="{{ url('/recycle2.png') }}" alt="" class="informasi mt-5">
-                <br>
-                <h5 class="mt-5">Jenis Sampah Organik</h5>
-                <br>
-                <p class="mt-5">Sampah adalah sisa buangan dari suatu produk atau barang yang sudah tidak digunakan
-                    lagi, tetapi masih dapat di daur ulang menjadi barang yang bernilai.
-
-                    Sampah organik adalah sampah yang berasal dari sisa mahkluk hidup yang mudah terurai secara alami tanpa
-                    proses campur tangan manusia untuk dapat terurai.
-
-                    Sampah organik bisa dikatakan sebagai sampah ramah lingkungan bahkan sampah bisa diolah kembali menjadi
-                    suatu yang bermanfaat bila dikelola dengan tepat. Tetapi sampah bila tidak dikelola dengan benar akan
-                    menimbulkan penyakit dan bau yang kurang sedap hasil dari pembusukan sampah organik yang cepat.<br>
-                    <br>
-                    Jenis - Jenis Sampah Organik
-                    Berdasarkan jenisnya sampah organik dapat digolongkan menjadi 2 antara lain sampah organik basah dan
-                    kering. <br><br>
-
-                    1. Sampah Organik Basah <br>
-                    Sampah organik basah adalah sampah organik yang banyak mengadung air. Sampah organik basah contohnya
-                    adalah sisa sayur, kulit pisang, buah yang busuk, kulit bawang dan sejenisnya.
-
-                    Inilah yang saya katakan bahwa sampah organik dapat menimbulkan bau tidak sedap sebab kandungan air
-                    tinggi yang menyebabkan sampah jenis ini cepat membusuk.
-
-                    2. Sampah Organik Kering
-                    Sampah organik kering adalah sampah organik yang sedikit mengandung air. Contoh sampah organik misalnya
-                    kayu, ranting pohon, kayu dan daun – daun kering. Kebanyakan sampah organik sulit diolah kembali jadi
-                    lebih sering dibakar untuk memusnahkannya.
-
-                    Contoh Sampah Organik
-                    Contoh dari dari sampah organik adalah nasi, kulit buah, buah dan sayuran busuk, ampas teh / kopi,
-                    bangkai hewan, dan kotoran hewan / manusia
-                </p>
-            </div>
         </div>
+
+
     </body>
 
     </html>
