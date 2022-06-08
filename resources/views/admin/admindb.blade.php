@@ -17,7 +17,7 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <a class="btn main-btn" href="/admin/banksampah/overview">Bank Sampah</a>
+                    <a class="btn main-btn" href="/admin/banksampah/tampilkan">Bank Sampah</a>
                 </div>
                 <div class="row">
                     <a class="btn main-btn" href="/admin/informasi/overview-informasi">Informasi Sampah</a>

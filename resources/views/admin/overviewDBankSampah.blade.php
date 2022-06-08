@@ -39,11 +39,15 @@
                     <td>{{ $b->profile->no_telepon}}</td>
                     <td>{{ $b->profile->nama_bank }}</td>
                     <td>{{ $b->profile->status_bank }} </td>
-                    <td><a href="#">Edit</a></td>
-                    <td><a href="#">Delete</a></td>
+                    <td><a href="/admin/banksampah/editData/{{$b->id}}">Edit</a></td>
+                    <td><a href="/admin/banksampah/hapusData/{{$b->id}}">Delete</a></td>
                 </tr>
             @endforeach
     </table>
+
+    <div>
+        <a href="/admin/banksampah/tambahData" class="btn btn-success">Tambah Bank Sampah</a>
+    </div>
 
     <script>
         $(document).ready(function() {

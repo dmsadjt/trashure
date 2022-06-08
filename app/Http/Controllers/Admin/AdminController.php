@@ -10,16 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $admin = Auth::user();
 
-        return view('admin.admindb', ['admin'=>$admin]);
+        return view('admin.admindb', ['admin' => $admin]);
     }
 
-    public function informasiSampah(){
+    public function informasiSampah()
+    {
         $informasi = DB::Table('informasi_sampahs')
-                        ->orderBy('info_id')
-                        ->paginate(5);
+            ->orderBy('info_id')
+            ->paginate(5);
 
         return view('admin.overviewDInformasi', ['informasi' => $informasi]);
     }
@@ -28,27 +30,48 @@ class AdminController extends Controller
     {
         $pengguna = User::where('role_id', 2)->get();
 
-        return view('admin.overviewDPengguna', ['pengguna'=>$pengguna]);
+        return view('admin.overviewDPengguna', ['pengguna' => $pengguna]);
     }
 
+    public function overviewMitra()
+    {
 
-    public function dataRoles(){
+        $mitra = User::where('role_id', 3)->get();
+
+        return view('admin.overviewDMitra', ['mitra' => $mitra]);
+    }
+
+    public function dataRoles()
+    {
         $roles = DB::Table('roles')
-                        ->orderBy('id')
-                        ->paginate(5);
+            ->orderBy('id')
+            ->paginate(5);
 
         return view('admin.overviewDPengguna', ['roles' => $roles]);
+    }
+
+    public function dataRoles2()
+    {
+        $roles2 = DB::Table('roles')
+            ->orderBy('id')
+            ->paginate(5);
+
+        return view('admin.overviewDMitra', ['roles' => $roles2]);
     }
     public function create()
     {
         return view('informasi.nambahinformasi');
     }
 
-    public function dataInformasiSampah(){
+    public function dataInformasiSampah()
+    {
         $informasi = DB::Table('informasi_sampahs')
-                        ->orderBy('info_id')
-                        ->paginate(5);
+            ->orderBy('info_id')
+            ->paginate(5);
 
         return view('informasi.nambahinformasi', ['informasi' => $informasi]);
     }
+
 }
+
+

@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DBPenggunaController;
+use App\Http\Controllers\Mitra\DBMitraController;
 
 //Auth
 Route::get('/', function () {
@@ -54,17 +55,28 @@ Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPenggu
 Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData');
 Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit');
 Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
-
 Route::post('/admin/pengguna/storePengguna','DBPenggunaController@storePengguna');
 
-route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewPengguna');
 
 Route::post('/admin/informasi/store','DBInformasiController@store');
 Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
-Route::get('/admin/banksampah/overview', 'Banksampah\BanksampahController@overviewData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/tampilkan', 'Banksampah\BanksampahController@tampilkan');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/tambahData', 'Banksampah\BanksampahController@tambahData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/editData/{id}', 'Banksampah\BanksampahController@editData');//Muhammad Dimas Adijanto - 5026201138
+Route::get('/admin/banksampah/hapusData/{id}', 'Banksampah\BanksampahController@hapusData');//Muhammad Dimas Adijanto - 5026201138
+Route::post('/admin/banksampah/postDataBankSampah', 'Banksampah\BanksampahController@postDataBankSampah');//Muhammad Dimas Adijanto - 5026201138
+Route::post('/admin/banksampah/updateData', 'Banksampah\BanksampahController@updateData');//Muhammad Dimas Adijanto - 5026201138
+
+
+Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
+Route::get('/admin/mitra/adddatamitra', 'Mitra\MitraController@tambahDataMitra');
+Route::post('/admin/mitra/storeMitra', 'Mitra\MitraCOntroller@storeMitra');
+Route::get('/admin/mitra/hapusdatamitra/{id}', 'Mitra\MitraController@hapusMitra');
+Route::get('/admin/mitra/editdatamitra/{id}', 'Mitra\MitraController@editMitra');
+Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra');
 
 //Pengguna
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');
@@ -72,14 +84,17 @@ Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@dafta
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
 Route::get('/pengguna/poin', 'Pengguna\PoinController@poin');
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
-Route::get('/pengguna/pesan/pembayaran', 'Pesanan\PesananController@pembayaran');
-Route::get('/pengguna/pesan/invoice', 'Pesanan\InvoiceController@invoice');
+Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah'); //Muhammad Dimas Adijanto - 5026201138
+Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran');
+Route::get('/pengguna/pesan/invoice', 'Pengguna\PenggunaController@invoice');
 Route::get('/pengguna/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/pengguna/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/pengguna/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
 Route::get('/pengguna/informasi/list/organik', 'Pengguna\DashboardController@masukInformasi');
-Route::get('/pengguna/pesan/pilih-alamat', 'Pengguna\PenggunaController@pilihAlamat');//Muhammad Dimas Adijanto - 5026201138
-
+Route::get('/pengguna/pesan/pilih-alamat', 'Pengguna\PenggunaController@pilihAlamat'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postAlamat', 'Pengguna\PenggunaController@postAlamat'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postPembayaran', 'Pengguna\PenggunaController@postPembayaran'); //Muhammad Dimas Adijanto - 5026201138
+Route::post('/pengguna/pesan/postPesanan', 'Pengguna\PenggunaController@postPesanan'); //Muhammad Dimas Adijanto - 5026201138
 
 
 //Mitra
@@ -87,6 +102,13 @@ Route::get('/mitra/pesanan/terima/id', 'Pesanan\PesananController@detailPesanan'
 Route::get('/mitra/pesanan/ambil/id', 'Pesanan\PesananController@ambilPesanan'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/mitra/pesanan/selesaikan/id', 'Pesanan\PesananController@selesaikanPesanan'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/mitra/pesanan/daftarpesanan', 'Mitra\MitraController@daftarpesanan');
+Route::get('/mitra/pesanan/detailpesanan/{id}', 'Mitra\MitraController@detailPesanan');
+Route::get('/mitra/pesanan/detailAmbilPesanan/{id}', 'Mitra\MitraController@detailAmbilPesanan');
+Route::get('/mitra/pesanan/detailSelesaikanPesanan/{id}', 'Mitra\MitraController@detailSelesaikanPesanan');
+
+Route::post('/mitra/pesanan/terimaPesanan', 'Mitra\MitraController@terimaPesanan');//Muhammad Dimas Adijato - 5026201138
+Route::post('/mitra/pesanan/ambilPesanan', 'Mitra\MitraController@ambilPesanan');//Muhammad Dimas Adijato - 5026201138
+Route::post('/mitra/pesanan/selesaikanPesanan', 'Mitra\MitraController@selesaikanPesanan');//Muhammad Dimas Adijato - 5026201138
 
 //Bank Sampah
 Route::get('/banksampah/daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');

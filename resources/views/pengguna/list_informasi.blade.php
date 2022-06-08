@@ -1,7 +1,5 @@
-@extends('layouts.navbar-pengguna')
-@section('text1', 'Pesan')
-@section('text2', 'Informasi')
-@section('content')
+@extends('layout.layout')
+@section('konten')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,10 +53,11 @@
 
     @foreach ($informasi as $i)
         <div class="row mt-5">
-            <a href="/informasi/list/{{$i->info_id}}">
+            <a href="/pengguna/informasi/list/{id}{{$i->info_id}}">
             <div class="card">
                 <div class="card-body">
-                    <p class="mt-3 ms-5">{{$i->judul}}</p>
+                    <h4 class="mt-3 ms-5">{{$i->judul}}</h4>
+
                 </div>
             </div>
             </a>
@@ -66,10 +65,10 @@
     @endforeach
 
     <div class="row mt-5">
-        <a href="/informasi/list/organik">
+        <a href="/pengguna/informasi/list/organik">
           <div class="card">
             <div class="card-body">
-                <p class="mt-3 ms-5">Jenis Sampah Organik</p>
+                <h4 class="mt-3 ms-5">Jenis Sampah Organik</h4>
             </div>
           </div>
         </a>
@@ -78,7 +77,7 @@
         <a href="#">
           <div class="card">
             <div class="card-body">
-                <p class="mt-3 ms-5">Jenis Sampah Non - Organik</p>
+                <h4 class="mt-3 ms-5">Jenis Sampah Non - Organik</h4>
 
             </div>
           </div>
@@ -88,7 +87,7 @@
         <a href="#">
           <div class="card">
             <div class="card-body">
-                <p class="mt-3 ms-5">Cara Mendaur Ulang Sampah</p>
+                <h4 class="mt-3 ms-5">Cara Mendaur Ulang Sampah</h4>
 
             </div>
           </div>
@@ -98,7 +97,7 @@
         <a href="#">
           <div class="card">
             <div class="card-body">
-                <p class="mt-3 ms-5">Cara Membuat Pupuk Kompos</p>
+                <h4 class="mt-3 ms-5">Cara Membuat Pupuk Kompos</h4>
 
             </div>
           </div>

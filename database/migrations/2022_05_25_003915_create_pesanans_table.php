@@ -20,10 +20,12 @@ class CreatePesanansTable extends Migration
             $table->unsignedBigInteger('id_banks')->nullable();//foreign id bank
             $table->string('jenis_sampah');
             $table->integer('volume');
-            $table->date('waktu_pemesanan')->useCurrent();
+            $table->datetime('waktu_pemesanan')->useCurrent();
             $table->string('status_pesanan')->default('Dalam pencarian driver');
             $table->integer('opsi_pembayaran');
             $table->string('alamat_pengguna');
+            $table->string('bukti_selesai')->nullable();
+
 
             $table->foreign('id_pengguna')->references('id')->on('users');
             $table->foreign('id_mitra')->references('id')->on('users');
