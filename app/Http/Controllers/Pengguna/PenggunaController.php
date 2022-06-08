@@ -132,7 +132,9 @@ class PenggunaController extends Controller
     }
 
     public function poin() {
-        return view("pengguna.poin");
+        $users = auth()->user();
+
+        return view("pengguna.poin", compact('users'));
     }
 
 

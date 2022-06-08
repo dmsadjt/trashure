@@ -72,9 +72,9 @@ class MitraController extends Controller
     public function editMitra($id)
     {
         // mengambil data berdasarkan id yang dipilih
-        $users = User::where('id',$id)->get();
+        $mitra = User::where('id',$id)->get();
         // passing data pendapatan yang didapat ke view edit.blade.php
-        return view('admin.editoverviewDMitra',['users' => $users]);
+        return view('admin.editoverviewDMitra',['mitra' => $mitra]);
 
     }
 
@@ -82,13 +82,11 @@ class MitraController extends Controller
     {
 
         DB::table('users')->where('id', $request->id)->update([
-            'role_id' => $request->nama,
-            'name' => $request->jabatan,
-            'email' => $request->umur,
-            'password' => $request->alamat
+            'role_id' => $request->role_id,
+            'name' => $request->name,
+            'email' => $request->email,
         ]);
-        DB::table('profils')->where('user_id', $request->user_id)->update([
-            'user_id' => $request->user_id,
+        DB::table('profils')->where('user_id', $request->id)->update([
             'alamat' => $request->alamat,
             'no_telepon' => $request->no_telepon,
             'no_rekening' => $request->no_rekening,

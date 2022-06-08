@@ -37,25 +37,21 @@
             <form action="/admin/mitra/updatedatamitra" method="post">
                 {{ csrf_field() }}
                 <div>
-                    @foreach ($users as $p)
+                    @foreach ($mitra as $m)
                     <div class="form-group">
 
-                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required" disabled>
-                            <option value="">--SELECT--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3" selected>3</option>
-                            <option value="4">4</option>
-                        </select> <br />
-                        Customer name <input class="form-control" type="text" name="name" value="{{ $p->name }}" required="required"> <br />
+                    <input type="hidden" name="id" id="id" value="{{$m->id}}">
+
+                    <input type="hidden" value="3" name="role_id" id="role_id">
+                        Customer name <input class="form-control" type="text" name="name" value="{{ $m->name }}" required="required"> <br />
                         Address
-                        <textarea class="form-control" type="text" name="alamat"  required="required">{{ $p->profile->alamat }}</textarea> <br />
-                        Email <input class="form-control" type="text" name="email" value="{{ $p->email }}" required="required"> <br />
+                        <textarea class="form-control" type="text" name="alamat"  required="required">{{ $m->profile->alamat }}</textarea> <br />
+                        Email <input class="form-control" type="text" name="email" value="{{ $m->email }}" required="required"> <br />
                         {{-- Password <input class="form-control" name="password" value="{{ $p->password }}" required="required"> <br /> --}}
-                        Phone number <input class="form-control" name="no_telepon" value="{{ $p->profile->no_telepon }}" required="required"> <br />
-                        Nomor rekening <input class="form-control" name="no_rekening" value="{{ $p->profile->no_rekening }}" required="required"> <br />
-                        Kendaraan <input class="form-control" name="kendaraan" value="{{ $p->profile->kendaraan}}" required="required"> <br />
-                        Plat kendaraan <input class="form-control" name="plat_kendaraan" value="{{ $p->profile->plat_kendaraan }}" required="required"> <br />
+                        Phone number <input class="form-control" name="no_telepon" value="{{ $m->profile->no_telepon }}" required="required"> <br />
+                        Nomor rekening <input class="form-control" name="no_rekening" value="{{ $m->profile->no_rekening }}" required="required"> <br />
+                        Kendaraan <input class="form-control" name="kendaraan" value="{{ $m->profile->kendaraan}}" required="required"> <br />
+                        Plat kendaraan <input class="form-control" name="plat_kendaraan" value="{{ $m->profile->plat_kendaraan }}" required="required"> <br />
                     </div>
                     @endforeach
                 </div>

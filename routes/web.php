@@ -51,16 +51,17 @@ Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'B
 Auth::routes();
 
 //Admin CRUD Pengguna, Mitra, Bank Sampah, dan Informasi
-Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPengguna');
-Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData');
-Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit');
-Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus');
-Route::post('/admin/pengguna/storePengguna','DBPenggunaController@storePengguna');
+Route::get('/admin/pengguna/overviewdata', 'Admin\AdminController@overviewPengguna');//Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/pengguna/adddatapengguna', 'DBPenggunaController@tambahData'); //Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/pengguna/editdatapengguna/{id}', 'DBPenggunaController@edit'); //Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/pengguna/hapusdatapengguna/{id}','DBPenggunaController@hapus'); //Ruben Tricahya Boediono - 5026201155
+Route::post('/admin/pengguna/storePengguna','DBPenggunaController@storePengguna'); //Ruben Tricahya Boediono - 5026201155
+Route::post('/admin/pengguna/updatedatapengguna', 'DBPenggunaController@updatePengguna'); //Ruben Tricahya Boediono - 5026201155
 
 
-Route::post('/admin/informasi/store','DBInformasiController@store');
 Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahData');
 Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::post('/admin/informasi/postInformasi', 'Informasi\InformasiController@postInformasi');
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
 Route::get('/admin/banksampah/tampilkan', 'Banksampah\BanksampahController@tampilkan');//Muhammad Dimas Adijanto - 5026201138
@@ -71,18 +72,18 @@ Route::post('/admin/banksampah/postDataBankSampah', 'Banksampah\BanksampahContro
 Route::post('/admin/banksampah/updateData', 'Banksampah\BanksampahController@updateData');//Muhammad Dimas Adijanto - 5026201138
 
 
-Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');
-Route::get('/admin/mitra/adddatamitra', 'Mitra\MitraController@tambahDataMitra');
-Route::post('/admin/mitra/storeMitra', 'Mitra\MitraCOntroller@storeMitra');
-Route::get('/admin/mitra/hapusdatamitra/{id}', 'Mitra\MitraController@hapusMitra');
-Route::get('/admin/mitra/editdatamitra/{id}', 'Mitra\MitraController@editMitra');
-Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra');
+Route::get('/admin/mitra/overviewdata',  'Admin\AdminController@overviewMitra');//Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/mitra/adddatamitra', 'Mitra\MitraController@tambahDataMitra'); //Ruben Tricahya Boediono - 5026201155
+Route::post('/admin/mitra/storeMitra', 'Mitra\MitraCOntroller@storeMitra'); //Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/mitra/hapusdatamitra/{id}', 'Mitra\MitraController@hapusMitra'); //Ruben Tricahya Boediono - 5026201155
+Route::get('/admin/mitra/editdatamitra/{id}', 'Mitra\MitraController@editMitra'); //Ruben Tricahya Boediono - 5026201155
+Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra'); //Ruben Tricahya Boediono - 5026201155
 
 //Pengguna
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
-Route::get('/pengguna/poin', 'Pengguna\PoinController@poin');
+Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin');
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
 Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran');

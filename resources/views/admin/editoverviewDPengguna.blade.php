@@ -34,19 +34,15 @@
             </nav>
 
 
-            <form action="/edit" method="post">
+            <form action="/admin/pengguna/updatedatapengguna" method="post">
                 {{ csrf_field() }}
                 <div>
                     @foreach ($users as $p)
                     <div class="form-group">
 
-                        ROLE ID <select class="form-control" type="text" name="role_id" required = "required" disabled>
-                            <option value="">--SELECT--</option>
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select> <br />
+                    <input type="hidden" name="id" id="id" value="{{$p->id}}">
+
+                    <input type="hidden" value="2" name="role_id" id="role_id">
                         Customer name <input class="form-control" type="text" name="name" value="{{ $p->name }}" required="required"> <br />
                         Address
                         <textarea class="form-control" type="text" name="alamat"  required="required">{{ $p->profile->alamat }}</textarea> <br />

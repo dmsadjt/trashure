@@ -51,10 +51,11 @@
         <br>
     </div>
 
-    @foreach ($informasi as $i)
+    <div class="m-5 p-5 border shadow rounded-3">
+        @foreach ($informasi as $i)
         <div class="row mt-5">
-            <a href="/pengguna/informasi/list/{id}{{$i->info_id}}">
-            <div class="card">
+            <a href="/pengguna/informasi/list/{{$i->info_id}}">
+            <div class="card shadow">
                 <div class="card-body">
                     <h4 class="mt-3 ms-5">{{$i->judul}}</h4>
 
@@ -63,49 +64,9 @@
             </a>
         </div>
     @endforeach
-
-    <div class="row mt-5">
-        <a href="/pengguna/informasi/list/organik">
-          <div class="card">
-            <div class="card-body">
-                <h4 class="mt-3 ms-5">Jenis Sampah Organik</h4>
-            </div>
-          </div>
-        </a>
     </div>
-    <div class="row mt-5">
-        <a href="#">
-          <div class="card">
-            <div class="card-body">
-                <h4 class="mt-3 ms-5">Jenis Sampah Non - Organik</h4>
 
-            </div>
-          </div>
-        </a>
-    </div>
-    <div class="row mt-5">
-        <a href="#">
-          <div class="card">
-            <div class="card-body">
-                <h4 class="mt-3 ms-5">Cara Mendaur Ulang Sampah</h4>
 
-            </div>
-          </div>
-        </a>
-    </div>
-    <div class="row mt-5">
-        <a href="#">
-          <div class="card">
-            <div class="card-body">
-                <h4 class="mt-3 ms-5">Cara Membuat Pupuk Kompos</h4>
-
-            </div>
-          </div>
-        </a>
-    </div>
-    {{-- <div class="row align-items-center">
-        <a href="#" class="btn">Jenis Sampah Organik</a>
-    </div> --}}
 </div>
 
 </body>
