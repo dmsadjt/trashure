@@ -59,7 +59,6 @@
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
-                    <th>CHECK</th>
                     <th>NAME</th>
                     <th>ROLE ID</th>
                     <th>ADDRESS</th>
@@ -76,7 +75,6 @@
             <tbody>
                 @foreach ($mitra as $m)
                     <tr>
-                        <td><input type="checkbox"></td>
                         <td>{{ $m->name }}</td>
                         <td>{{ $m->role_id }}</td>
                         <td>{{ $m->profile->alamat }}</td>

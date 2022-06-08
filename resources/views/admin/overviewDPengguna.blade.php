@@ -58,7 +58,6 @@
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
-                    <th>CHECK</th>
                     <th>NAME</th>
                     <th>ROLE ID</th>
                     <th>ADDRESS</th>
@@ -73,7 +72,6 @@
             <tbody>
                 @foreach ($pengguna as $p)
                     <tr>
-                        <td><input type="checkbox"></td>
                         <td>{{ $p->name }}</td>
                         <td>{{ $p->role_id }}</td>
                         <td>{{ $p->profile->alamat }}</td>
