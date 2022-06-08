@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Http\Controllers\Controller;
 use App\Pesanan;
 
 
@@ -43,8 +42,6 @@ class MitraController extends Controller
             // 'alamat' => $request->alamat,
             'email' => $request->email,
             'password' => $request->password,
-            // 'no_telepon' => $request->no_telepon,
-            // 'no_rekening' => $request->no_rekening,
         ]);
 
         $last_child = DB::table('users')->orderBy('id','desc')->first();
@@ -100,6 +97,7 @@ class MitraController extends Controller
         ]);
 
         return redirect('/admin/mitra/overviewdata');
+    }
     public function detailPesanan($id){
         $pesanan = Pesanan::where('id',$id)->first();
 

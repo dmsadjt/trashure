@@ -45,7 +45,7 @@ Route::group(['as' => 'mitra.', 'prefix' => 'mitra', 'namespace' => 'Mitra', 'mi
 });
 
 Route::group(['as' => 'banksampah.', 'prefix' => 'banksampah', 'namespace' => 'Banksampah', 'middleware' => ['auth', 'banksampah']], function () {
-    Route::get('dashboard', 'BanksampahController@index');
+    Route::get('dashboard', 'BanksampahController@index')->name('banksampahdashboard');
 });
 
 Auth::routes();
@@ -114,6 +114,9 @@ Route::post('/mitra/pesanan/selesaikanPesanan', 'Mitra\MitraController@selesaika
 Route::get('/banksampah/daftarpesananbank', 'BankSampah\BankSampahController@daftarpesananbanks');
 Route::get('/banksampah/profilbank', 'Banksampah\BanksampahController@profil'); //Muhammad Dimas Adijanto - 5026201138
 Route::get('/banksampah/statusbank', 'BankSampah\BankSampahController@statusBank');
+Route::post('/banksampah/ubahstatus', 'Banksampah\BanksampahController@storeStatus');
+Route::post('/banksampah/navbar', 'Banksampah\BanksampahController@navbar');
+
 
 
 //other

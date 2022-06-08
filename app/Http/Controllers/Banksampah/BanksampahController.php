@@ -7,23 +7,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Pesanan;
 
 class BanksampahController extends Controller
 {
     public function index(){
-        return view('banksampah.banksdb');
+        $banks = auth()->user();
+
+        return view('banksampah.banksdb',compact('banks'));
     }
 
-    
+
     public function daftarpesananbanks()
     {
-        return view("banksampah.daftarpesanan1");
+        $banks= auth()->user();
+        return view("banksampah.daftarpesanan1", compact('banks'));
     }
 
-    public function profil()
-    {
-        $banks = Auth::user();
-        return view("banksampah.profil", ['banks' => $banks]);
+    public function navbar(){
+        $banks= auth()->user();
+        return view('layouts.navbarBanks', compact('banks'));
     }
     //
 
@@ -113,15 +116,7 @@ class BanksampahController extends Controller
                     'status_bank' => $request->status_bank,
                 ]);
 
-                return redirect('/banksampah/profilbank');
+                return redirect('/');
     }
-
-    public function statusBank() {
-        $status = DB::table('status')->first();
-
-
-        return view('banksampah.statusbank', compact('status'));
-    }
-
 
 }

@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.navbarBanks')
 @section('text1', 'Profil Bank')
 @section('text2', 'Daftar Pesanan')
 

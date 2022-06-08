@@ -82,3 +82,17 @@ nav {
 .tombol {
     margin-top: 150px;
 }
+
+.inactive {
+    display:inline-flex;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.form_status {
+    justify-content: center;
+    margin-top: 2em;
+}

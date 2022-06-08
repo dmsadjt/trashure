@@ -30,12 +30,11 @@
         <div class="container">
             <a class="navbar-brand fw-bold text-light" href="/banksampah/dashboard">TRASHURE</a>
             <ul class="navbar-nav justify-content-end align-items-center">
+                @if ($banks->profile->status_bank == 'Active')
                 <li class="nav-item">
-                    <a class="nav-link text-light" aria-current="page" href="/banksampah/profilbank">Profil Bank</a>
+                    <a class="nav-link text-light" href="/banksampah/daftarpesananbank">Daftar Pesanan</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/daftarpesananbank">Daftar Pesanan</a>
-                </li>
+                @endif
                 {{-- dropdown --}}
                 <li class="dropdown-center">
                     <a class="navbar-brand ms-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
