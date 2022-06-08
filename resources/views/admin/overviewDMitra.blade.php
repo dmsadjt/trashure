@@ -59,7 +59,6 @@
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
-                    <th>CHECK</th>
                     <th>NAME</th>
                     <th>ROLE ID</th>
                     <th>ADDRESS</th>
@@ -69,13 +68,13 @@
                     <th>NOMOR REKENING</th>
                     <th>KENDARAAN</th>
                     <th>PLAT KENDARAAN</th>
-                    <th>ACTION</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($mitra as $m)
                     <tr>
-                        <td><input type="checkbox"></td>
                         <td>{{ $m->name }}</td>
                         <td>{{ $m->role_id }}</td>
                         <td>{{ $m->profile->alamat }}</td>
@@ -87,13 +86,10 @@
                         <td>{{$m->profile->plat_kendaraan}}</td>
 
                         <td>
-                            <a href="/admin/mitra/editdatamitra/{{ $m->id }}">
-                                <input type="button" id="editButton" value="edit">
-                            </a>
-                            <a href="/admin/mitra/hapusdatamitra/{{ $m->id }}">
-                                <input type="button" id="deleteButton" value="delete">
-                            </a>
-
+                            <a href="/admin/mitra/editdatamitra/{{ $m->id }}">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/admin/mitra/hapusdatamitra/{{ $m->id }}">Delete</a>
                         </td>
                     </tr>
                 @endforeach

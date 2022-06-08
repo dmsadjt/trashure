@@ -55,6 +55,22 @@ class DBPenggunaController extends Controller
 	return view('admin.editoverviewDPengguna',['users' => $users]);
 
 }
+public function updatePengguna(Request $request)
+    {
+
+        DB::table('users')->where('id', $request->id)->update([
+            'role_id' => $request->role_id,
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        DB::table('profils')->where('user_id', $request->id)->update([
+            'alamat' => $request->alamat,
+            'no_telepon' => $request->no_telepon,
+            'no_rekening' => $request->no_rekening,
+        ]);
+
+        return redirect('/admin/pengguna/overviewdata');
+    }
 
 public function hapus($id)
     {
