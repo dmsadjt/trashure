@@ -24,4 +24,8 @@
     text-align: center;
 }
 
-
+.img-info{
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+}

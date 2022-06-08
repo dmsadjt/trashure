@@ -23,6 +23,8 @@ class InformasiController extends Controller
             $files->move($destinationPath, $profileImage);
             $insert['image'] = "$profileImage";
 
+
+
             DB::table('informasi_sampahs')->insert([
                     'judul' => $request->judul,
                     'informasi' => $request->informasi,
