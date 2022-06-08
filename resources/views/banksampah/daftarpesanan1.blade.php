@@ -43,7 +43,6 @@
         table {
             margin-top: 60px;
         }
-
     </style>
 
     <body>
@@ -81,35 +80,24 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div id="history" class="container tab-pane active"><br>
+
+                            @foreach ($pesanan as $p)
                             <div class="card">
                                 <div class="card-body" style="display: inline-block"> <img
                                         src="{{ URL::asset('/image/paper.png') }}" height="120" width="100"
                                         class="float-start">
                                     <div class="text">
                                         <h3><b>Accept Trash</b> </h3>
-                                        <h5>Driver Name : RubenGod <span class="a"> Trash Delivered <span></h5>
-                                        <h5>Plate Number: L 444 SYU <span class="b"> 26 February 2002 02.00 PM <span></h5>
+                                        <h5>Driver Name : RubenGod <span class="a"> {{$p->status_pesanan}} <span></h5>
+                                        <h5>Plate Number: L 444 SYU <span class="b"> {{$p->waktu_pemesanan}}
+                                                <span></h5>
                                         <h5>Vehicle Used: ZX150 R </h5>
 
                                     </div>
                                 </div>
-
                             </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-body" style="display: inline-block"> <img
-                                        src="{{ URL::asset('/image/paper.png') }}" height="120" width="100"
-                                        class="float-start">
-                                    <div class="text">
-                                        <h3><b>Accept Trash</b> </h3>
-                                        <h5>Driver Name : TamGod <span class="a"> Trash Delivered <span></h5>
-                                        <h5>Plate Number: T 444 M <span class="c"> 17 July 2021 05.00 PM <span></h5>
-                                        <h5>Vehicle Used: Kawasaki Honda </h5>
+                            @endforeach
 
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
 
                         <div id="ongoing" class="container tab-pane fade" style="align-text: center"><br>

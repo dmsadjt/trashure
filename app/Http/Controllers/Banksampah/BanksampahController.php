@@ -21,7 +21,18 @@ class BanksampahController extends Controller
     public function daftarpesananbanks()
     {
         $banks= auth()->user();
-        return view("banksampah.daftarpesanan1", compact('banks'));
+        $pesanan = Pesanan::where('id_banks', $banks->id)->get();
+        // $mitra_nama = array();
+        // $mitra_plat = array();
+        // $mitra_kendaraan = array();
+        // foreach($pesanan as $p){
+        //     $user = User::where('id',$p->id_mitra)->first();
+        //     array_push($mitra_nama, $user->name);
+        //     array_push($mitra_plat, $user->profile->plat_kendaraan);
+        //     array_push($mitra_kendaraan, $user->profile->kendaraan);
+        // }
+        // dd($mitra_kendaraan);
+        return view("banksampah.daftarpesanan1", compact('banks','pesanan'));
     }
 
     public function navbar(){
