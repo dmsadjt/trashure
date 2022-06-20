@@ -60,7 +60,7 @@ Route::post('/admin/pengguna/updatedatapengguna', 'DBPenggunaController@updatePe
 
 
 Route::get('/admin/informasi/adddatainformasi', 'DBInformasiController@tambahData');
-Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi');
+Route::get('/admin/informasi/nambahinformasi', 'Informasi\InformasiController@nambahinformasi'); // Muhammad Raffi Priyadiantama - 5026201072
 Route::post('/admin/informasi/postInformasi', 'Informasi\InformasiController@postInformasi');
 Route::get('/admin/informasi/overview-informasi', 'Admin\AdminController@informasiSampah'); //Muhammad Dimas Adijanto - 5026201138
 
@@ -83,11 +83,11 @@ Route::post('/admin/mitra/updatedatamitra', 'Mitra\MitraController@updateMitra')
 Route::get('/pengguna/pengaturan', 'Pengguna\PengaturanController@pengaturan');
 Route::get('/pengguna/daftarpesananpengguna', 'Pengguna\PenggunaController@daftarpesananpengguna');
 Route::get('/pengguna/pesananpengguna', 'Pengguna\PenggunaController@pesanpengguna');
-Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin');
+Route::get('/pengguna/poin', 'Pengguna\PenggunaController@poin'); // Muhammad Raffi Priyadiantama - 5026201072
 Route::get('/pengguna/pesan/pilihsampah', 'Pengguna\PenggunaController@pilihsampahh');
 Route::post('/pengguna/pesan/postsampah', 'Pengguna\PenggunaController@postSampah'); //Muhammad Dimas Adijanto - 5026201138
-Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran');
-Route::get('/pengguna/pesan/invoice', 'Pengguna\PenggunaController@invoice');
+Route::get('/pengguna/pesan/pembayaran', 'Pengguna\PenggunaController@pembayaran'); // Muhammad Raffi Priyadiantama - 5026201072
+Route::get('/pengguna/pesan/invoice', 'Pengguna\PenggunaController@invoice'); // Muhammad Raffi Priyadiantama - 5026201072
 Route::get('/pengguna/informasi', 'Pengguna\DashboardController@informasi');
 Route::get('/pengguna/informasi/list', 'Pengguna\DashboardController@daftarInformasi');
 Route::get('/pengguna/informasi/list/{id}', 'Pengguna\DashboardController@masukInformasi'); //sdh konek database
